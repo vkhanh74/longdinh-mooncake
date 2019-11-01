@@ -1,0 +1,24 @@
+//Calculation px to rem
+@function remCal($size) {
+  @return ($size/$rem-baseline) * 1rem;
+}
+
+//Golder ratio line height {
+@function goldLineHeight($font-size) {
+	@return ($font-size/$rem-baseline*1.42857) * 1rem;
+}
+
+//Get color in colors map
+@function getColor($color) {
+	@return map-get($colors, $color);
+}
+
+//Check if color has exits 
+@function checkColor($color) {
+	@if map-has-key($colors, $color) {
+		@return getColor($color);
+	}
+	@else {
+		@return $color;
+	}
+}

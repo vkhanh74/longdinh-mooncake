@@ -1,0 +1,10 @@
+/***************************
+	Typography
+***************************/
+
+//Generator some default font color
+@each $name, $value in $colors {
+  .text-#{$name} {
+    color: $value;
+  }
+}

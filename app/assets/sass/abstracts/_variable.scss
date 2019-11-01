@@ -1,0 +1,15 @@
+//Default transition
+$transition: 0.3s ease-out;
+
+//Default colors
+$colors: (
+	black: #000,
+	white: #fff,
+	trans: transparent,
+);
+
+//Cross-browser
+$prefixes: (webkit,	moz, ms, o);
+
+//Rembaseline
+$rem-baseline: 10;

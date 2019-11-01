@@ -1,0 +1,111 @@
+//*****************************
+//	Typography
+//*****************************
+
+// $up: Uppercase;
+// $cpt: Capitalize;
+@mixin link($color, $hvr-color, $fsz: 16, $fw: 400, $lh: 1, $up: false, $cpt: false) {
+	color: checkColor($color);
+	font-size: remCal($fsz);
+	font-weight: $fw;
+	text-decoration: none;
+	cursor: pointer;
+	&:hover {
+  		color: checkColor($hvr-color);
+	}
+	//Transition
+	@include prefix(transition, $transition)
+	//Line height
+	@if $lh == 1 {
+		line-height: goldLineHeight($fsz);
+	}
+	@else if $lh == 0 {
+		line-height: 1;
+	}
+	@else {
+		line-height: remCal($lh)
+	}  	
+	//Text decoration
+	@if $up {
+   		text-transform: uppercase;
+	} 
+	@if $cpt {
+  		text-transform: capitalize;
+  	}
+}
+
+@mixin typo($color: #000, $fsz: 16, $fw: 400, $lh: 1, $up: false, $cpt: false) {
+	color: checkColor($color);
+	font-size: remCal($fsz);
+	font-weight: $fw;
+	//Line height
+	@if $lh == 1 {
+		line-height: goldLineHeight($fsz);
+	}
+	@else if $lh == 0 {
+		line-height: 1;
+	}
+	@else {
+		line-height: remCal($lh);
+	}
+	//Text decoration
+	@if $up {
+	   	text-transform: uppercase;
+  	} 
+  	@if $cpt {
+  		text-transform: capitalize;
+  	}
+}
+
+//*****************************
+//	Input
+//*****************************
+@mixin input($pd-ver:15,$pd-hoz:15,$width: 100%,$brd: 0px,$height: auto,$input-color: checkColor(black),$plhd-color: #aeaeae) {
+	background-color: checkColor(white);
+	border: 1px solid checkColor(black);
+	padding: {
+		top: remCal($pd-ver);
+		bottom: remCal($pd-ver);
+		right: remCal($pd-hoz);
+		left: remCal($pd-hoz);
+	}
+	height: remCal($height);
+	width: $width;
+	transition: $transition;
+	-webkit-appearance: none;
+	@include typo($lh: $height, $color: $input-color);
+	@include prefix(border-radius, $brd);
+	&:focus {
+		outline: 0;
+		box-shadow: none;
+	}
+	@include input-pseudo-class {
+		@include typo($lh: $height,$color: $plhd-color);
+	}
+}
+
+//*****************************
+//	Cross-browser
+//*****************************
+@mixin prefix($property, $value) {
+  	@each $prefix in $prefixes {
+   		#{'-' + $prefix + '-' + $property}: $value;
+  	}
+  	// Output standard non-prefixed declaration
+  	#{$property}: $value;
+}
+
+@mixin input-pseudo-class() {
+    @each $prefix in $prefixes { 
+      @if $prefix == 'moz' {
+	    #{'&:-' + $prefix + '-' + 'input-placeholder'} {@content; line-height: -moz-block-height };
+      	#{'&::-' + $prefix + '-' + 'input-placeholder'} {@content; line-height: -moz-block-height };
+	  }
+	  @else {
+	  	#{'&:-' + $prefix + '-' + 'input-placeholder'} {@content};
+      	#{'&::-' + $prefix + '-' + 'input-placeholder'} {@content};
+	  }
+    }
+    &:input-placeholder {@content};
+    &::input-placeholder {@content};
+}

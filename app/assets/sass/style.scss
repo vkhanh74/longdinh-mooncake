@@ -1,0 +1,11 @@
+@import "abstracts/mixin";
+@import "abstracts/function";
+@import "abstracts/variable";
+
+@import "base/reset";
+@import "base/transition";
+@import "base/typography";
+
+input {
+	@include input(15, 20, $height: 50);
+}
