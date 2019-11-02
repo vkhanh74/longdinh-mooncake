@@ -80,9 +80,9 @@ function cleanBuild(done) {
 }
 
 const watching = gulp.parallel(wathFiles, browserSyncF);
-const build = gulp.parallel(cleanBuild, style, pugHtml, watchJs, minifySoucre, minifyImage, moveFonts)
+const build = gulp.parallel(cleanBuild, style, pugHtml, minifySoucre, minifyImage, moveFonts)
 
 exports.default = watching;
 exports.build = build;
 
-//Run gulp build to build production
+//Run gulp build to build production version

@@ -1,6 +1,9 @@
 //Calculation px to rem
 @function remCal($size) {
-  @return ($size/$rem-baseline) * 1rem;
+	@if ($size == 'auto' or $size == '100%') {
+		@return $size;
+	}
+  	@return ($size/$rem-baseline) * 1rem;
 }
 
 //Golder ratio line height {
