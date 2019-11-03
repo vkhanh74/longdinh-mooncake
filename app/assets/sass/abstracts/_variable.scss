@@ -8,8 +8,32 @@ $colors: (
 	trans: transparent,
 );
 
+//Color schema
+$colorscheme: (
+	gray: (
+		base: #ccc,
+		light: #aeaeae,
+		dark: #666
+	),
+	brown: (
+		base: #ab906b,
+		light: #ecdac3,
+		dark: #5e421c
+	)
+);
+
 //Cross-browser
 $prefixes: (webkit,	moz, ms, o);
 
 //Rembaseline
 $rem-baseline: 10;
+
+//Font
+$font: (
+	color: #000,
+	family: sans-serif,
+	size: 16px,
+	line-height: 1,
+);
+
+

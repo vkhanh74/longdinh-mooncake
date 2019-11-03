@@ -17,7 +17,7 @@
 }
 
 //Check if color has exits 
-@function checkColor($color) {
+@function setColor($color) {
 	@if map-has-key($colors, $color) {
 		@return getColor($color);
 	}
@@ -25,3 +25,11 @@
 		@return $color;
 	}
 }
+
+//Get color schema
+@function setSchmaColor($scheme, $tone: base) {
+    @return map-get(map-get($colorscheme, $scheme), $tone);
+} 
+
+
+
