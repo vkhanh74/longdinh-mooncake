@@ -3,6 +3,8 @@ $transition: 0.3s ease-out;
 
 //Default colors
 $colors: (
+	base: #93743D,
+	base-lighter: #FACF5A,
 	black: #000,
 	white: #fff,
 	trans: transparent,
@@ -11,14 +13,9 @@ $colors: (
 //Color schema
 $colorscheme: (
 	gray: (
-		base: #ccc,
+		base: #666,
 		light: #aeaeae,
-		dark: #666
-	),
-	brown: (
-		base: #ab906b,
-		light: #ecdac3,
-		dark: #5e421c
+		dark: #333
 	)
 );
 
@@ -31,9 +28,46 @@ $rem-baseline: 10;
 //Font
 $font: (
 	color: #000,
-	family: sans-serif,
-	size: 16px,
+	family: cambria-regular,
+	size: 1.6rem,
 	line-height: 1,
 );
 
+//Font src
+$font-source: (
+	cambria-regular: '../webfonts/cambria.ttf',
+	cambria-bold: '../webfonts/cambriab.ttf',
+	SVN: '../webfonts/SVN-Monday.otf',
+);
 
+//Button
+
+//1. font color 
+//2. hover font color 
+//3. background color 
+//4. hover background color 
+//5. border color 
+//6. hover boder
+$buttons: (
+  	base: (#93743D, #fff, transparent, #93743D, #93743D, #93743D), 
+  	base-lighter: (#FACF5A, #fff, transparent, #FACF5A, #FACF5A, #FACF5A), 
+  	base-outline: (#FFF, #93743D, transparent, transparent, #FFF, #93743D),
+  	base-lighter-outline: (#FFF, #FACF5A, transparent, transparent, #FFF, #FACF5A),
+);
+
+//Align
+$align: (
+	left: left,
+	right: right,
+	center: center
+);
+
+//Breakpoints
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1770px
+);

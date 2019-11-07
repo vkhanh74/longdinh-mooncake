@@ -1,0 +1,330 @@
+//Banner
+.banner {
+	position: relative;
+	background: {
+		image: url('../images/banner-bg.png');
+		size: cover;
+		position: center;
+	};
+	padding: remCal(255) 0;
+	.banner-content {
+		position: relative;
+		z-index: 1;
+		.banner-content--title {
+			@include typo($color: base-lighter, $fsz: 75, $lh: 95);
+			font-family: SVN;
+			margin-bottom: remCal(30);
+		}
+		.banner-content--intro {
+			@include typo($color: white, $fsz: 20, $lh: 30);
+			margin-bottom: remCal(60);
+		}
+		.play-btn {
+			@include link(white, base-lighter, $fsz: 18, $fw: 700, $lh: 0);
+			margin-right: remCal(65);
+			&:hover {
+				i {
+					border-color: getColor(base-lighter);
+				}
+			}
+			i {
+				padding: remCal(15);
+				border: remCal(2) solid #fff;
+				border-radius: 999px;
+				margin-right: remCal(15);
+				// transition: $transition;
+			}
+		}
+	}
+	.banner-img {
+		img {
+			position: absolute;
+			z-index: 0;
+			&.banner-img--1 {
+				bottom: 0;
+				left: 0;
+				max-width: 40%;
+			}
+			&.banner-img--2 {
+				bottom: 0;
+				right: 0;
+				max-width: 40%;
+			}
+		}
+		
+	}
+	@include large-desktop {
+		padding: remCal(200) 0;
+	}
+	@include desktop{
+		padding: remCal(150) 0;
+	}
+	@include small-desktop{
+		padding: remCal(100) 0;
+		.banner-img {
+			display: none;
+		}
+	}
+	@include mobile {
+		padding: remCal(100) 0;
+		.banner-content {
+			.banner-btn_group {
+				.play-btn {
+					margin-right: remCal(25);
+					margin-bottom: remCal(20);
+					display: inline-block;
+				}
+			}
+		}
+	}
+}
+
+.section-1 {
+	position: relative;
+	padding-top: remCal(100);
+	padding-bottom: remCal(100);
+	overflow: hidden;
+	background: {
+		image: url('../images/bg-1.png');
+		size: cover;
+		position: center;
+	}
+	.decoration {
+		.decoration-top {
+			img {
+				position: absolute;
+				max-width: remCal(200);
+				top: 0;
+				transform-origin: center -20px;
+				&.decoration-top--1 {
+					left: remCal(50);
+					animation: swing ease-in-out 2s infinite alternate;
+				}
+				&.decoration-top--2 {
+					right: remCal(50);
+					animation: swing2 ease-in-out 1.5s infinite alternate;
+				}
+			}
+		}
+		.decoration-bottom {
+			img {
+				position: absolute;
+				max-width: remCal(200);
+				bottom: 0;
+				&.decoration-bottom--1 {
+					left: remCal(0);
+				}
+				&.decoration-bottom--2 {
+					right: remCal(-50);
+					max-width: remCal(380);
+				}
+			}
+		}
+	}
+	//Our story
+	.our-story {
+		margin-bottom: remCal(100);
+		.our-story_content {
+			p {
+				@include typo($color: setSchemaColor(gray, base), $fsz: 20, $lh: 30);
+				margin-bottom: remCal(15);
+				&:first-child {
+					text-indent: remCal(30);
+				}
+			}
+			.our-story_content__intro {
+				max-width: 90%;
+			}
+			.our-story_content--1 {
+				margin-bottom: remCal(75);
+				iframe {
+					border-radius: remCal(5);
+					border: 2px solid getColor(base);	
+				}
+			}
+			.our-story_content--2 {
+				.our-story_content__intro {
+					margin-left: auto;
+				}
+			}
+		}
+	}
+	// Our product
+	.our-products {
+		.product-type {
+			position: relative;
+			display: block;
+			// border-radius: 5px;
+			border: {
+				radius: remCal(5);
+				style: solid;
+				color: getColor(base);
+				width: remCal(2);
+			}
+			.product-type_img {
+				background: linear-gradient(132.45deg, rgb(255, 218, 118) 0%, rgb(255, 186, 0) 100%);
+				padding: remCal(30);
+				height: remCal(530);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: contain;
+				}
+			}
+			.product-type_content {
+				position: absolute;
+				opacity: 0;
+				background-color: #93743dad;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: $transition;
+				h5 {
+					@include typo($color: getColor(white), $fsz: 45, $lh: 0);
+					font-family: SVN;
+				}
+			}
+			&:hover {
+				.product-type_content {
+					opacity: 1;
+				}
+			}
+			&.small-product-type {
+				margin-bottom: 30px;
+				.product-type_img {
+					height: remCal(250);
+					padding: remCal(10);
+				}
+				.product-type_content {
+					h5 {
+						font-size: remCal(26);
+					}
+				}
+			}
+		}
+	}
+	@include small-desktop {
+		.decoration {
+			display: none;
+		}
+	}
+	@include tablet {
+		.our-story  {
+			margin-bottom: remCal(50);
+			.our-story_content {
+				.our-story_content__intro {
+					max-width: 100%;
+				}
+				.our-story_content--1 {
+					.our-story_content__intro {
+						margin-bottom: remCal(30);
+					}
+				}
+				.our-story_content--2 {
+					img {
+						margin-bottom: remCal(30);
+					}
+				}
+			}
+		}
+		.our-products {
+			.product-type {
+				&.small-product-type {
+					.product-type_img {
+						max-height: inherit;
+					}
+				}
+				&.big-product-type {
+					margin-bottom: remCal(30);
+				}
+				.product-type_content {
+					opacity: 1;
+				}
+			}
+		}
+	} 
+}
+
+.call-to-action {
+	@include media-breakpoint-down(sm) {
+		display: none;
+	}
+}
+
+.section-2 {
+	padding-top: remCal(225);
+	padding-bottom: remCal(450);
+	position: relative;
+	background: {
+		image: url('../images/bg-2.png');
+		size: cover;
+		position: center top;
+	}
+	.feature-products {
+		margin-bottom: remCal(100);
+		.products-group {
+			position: relative;
+			margin: 0 -15px;
+			margin-bottom: remCal(50);
+			.product {
+				padding: 0 15px;
+			}
+		}
+	}
+	.feature-news {
+		margin-bottom: remCal(100);
+		.feature-news-group {
+			margin: 0 -15px;
+			.news {
+				padding: 0 15px;
+			}
+		}
+	}
+	.lastest-news {
+		.section-header {
+			margin-bottom: remCal(40);
+		}
+		form {
+			position: relative;
+			input {
+				@include input(setSchemaColor(gray),$fsz:18,$pd-hoz:30);
+				border-width: 0 0 remCal(2) 0;
+				text-align: center;
+			}
+			button {
+				@include button($pd: 0, $bg-color: trans, $hvr-color: base, $color: setSchemaColor(gray,dark), $hvr-bg-color: trans, $border-thick: 0);
+				position: absolute;
+				top: 15px;
+				right: 30px;
+			}
+		}
+	}
+	.decoration {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 0;
+	}
+	@include large-desktop {
+		padding-bottom: remCal(320);
+	}
+	@include small-desktop {
+		padding-top: remCal(85);
+		padding-bottom: remCal(210);
+		.lastest-news {
+			form {
+				input {
+					padding-right: remCal(80);
+				}
+			}
+		}
+	}
+}
+

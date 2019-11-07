@@ -1,0 +1,40 @@
+.btn {
+	border: {
+		width: remCal(2);
+		style: solid;
+	};
+	font: {
+		size: remCal(18);
+		family: cambria-bold;
+	};
+	cursor: pointer;
+	display: inline-block;
+	padding: remCal(13) remCal(35);
+	text-decoration: none;
+	line-height: 1;
+	@include prefix(border-radius, 999px);
+	@include prefix(transition, $transition);
+	&:focus {
+		outline: 0;
+		box-shadow: 0;
+	}
+	@each $name, $colors in $buttons {
+	    $fontColor: nth($colors, 1);
+	    $hvrFontColor: nth($colors, 2);
+	    $bgColor: nth($colors, 3);
+	    $hvrBgColor: nth($colors, 4);
+	    $borderColor: nth($colors, 5);
+	    $hvrBorderColor: nth($colors, 6);
+	    &--#{$name} {
+	    	color: $fontColor;
+    		background-color: $bgColor; 
+    		border-color: $borderColor;
+	    	&:hover {
+	    		color: $hvrFontColor;
+	    		background-color: $hvrBgColor; 
+	    		border-color: $hvrBorderColor;
+	    	}
+	    } 
+  	}
+}
+

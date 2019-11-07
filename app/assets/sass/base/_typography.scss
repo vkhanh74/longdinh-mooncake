@@ -1,6 +1,13 @@
 /***************************
 	Typography
 ***************************/
+//
+@each $font-name, $font-src in $font-source {
+	@font-face { 
+		font-family: $font-name;
+		src: url($font-src);
+	}
+}
 
 //Generator some default font color
 @each $name, $value in $colors {

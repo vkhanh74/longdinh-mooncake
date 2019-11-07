@@ -1,0 +1,66 @@
+footer {
+	padding-top: remCal(100);
+	padding-bottom: remCal(100);
+	background-color: setColor(base);
+	.typo-group {
+		margin-bottom: remCal(20);
+		h5 {
+			@include typo($color: white,$fw:700,$fsz: 16, $lh: 0);
+			margin-bottom: remCal(15);
+		}
+		p {
+			@include typo($color: white, $fsz: 16, $lh: 24);
+			margin-bottom: remCal(5);
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	.footer-title {
+		@include typo($color: white, $fsz: 20, $fw: 700, $lh: 0);
+		margin-bottom: remCal(30);
+	}
+	.footer-content {
+		.logo {
+			display: block;
+			margin-bottom: remCal(30);
+			img {
+				max-height: remCal(70);
+			}
+		}
+		.intro {
+			@include typo($color: white, $fsz: 16, $lh: 24);
+			margin-bottom: remCal(30);
+		}
+	}
+	.quick-links {
+		li {
+			margin-bottom: remCal(20);
+			&:last-child {
+				margin-bottom: 0;
+			}
+			a {
+				@include link(white, white, $fsz: 16);
+				&:hover {
+					font-family: cambria-bold;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	@include small-desktop {
+		padding-top: remCal(70);
+		padding-bottom: remCal(70);
+		.footer-title {
+			margin-top: remCal(50);
+		}
+	}
+
+	@include tablet {
+		padding-top: remCal(50);
+		padding-bottom: remCal(50);
+		.footer-title {
+			margin-top: remCal(50);
+		}
+	}
+}

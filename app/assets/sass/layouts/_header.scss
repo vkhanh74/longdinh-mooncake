@@ -1,0 +1,107 @@
+header {
+	background-color: getColor(base);
+	padding-top: remCal(20);
+	padding-bottom: remCal(20);
+	&.absolute {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background-color: getColor(trans);
+		z-index: 5;
+	}
+	&.isMobile {
+		background-color: getColor(base);
+		position: unset;
+		.header-content {
+			.logo {
+				img {
+					max-height: remCal(50)
+				}
+			}
+			nav {
+				position: fixed;
+				left: -100%;
+				top: 0;
+				width: 280px;
+				height: 100vh;
+				background-color: getColor(base);
+				padding: remCal(50) remCal(30);
+				z-index: 10;
+				overflow-y: auto;
+				border-right: 2px solid transparent;
+			  	background-clip: padding-box, border-box;
+			  	background-origin: padding-box, border-box;
+			    background-image: linear-gradient(getColor(base), getColor(base)), linear-gradient(180deg, getColor(base) 0%, #FACF5A 50%, getColor(base) 100%);
+			    transition: $transition;
+				ul {
+					li {
+						display: block;
+						margin-left: 0;
+						margin-right: 0;
+						margin-bottom: remCal(50);
+					}
+				}
+				&.isOpen {
+					left: 0;
+				}
+			}
+			.nav-function {
+				#open-nav {
+					display: inline-block;
+				}
+			}
+		}
+	}
+	
+	.header-content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		.logo {
+			img {
+				max-height: remCal(70);
+			}
+		}
+		nav {
+			ul {
+				li {
+					display: inline-block;
+					margin-left: 13px;
+					margin-right: 13px;
+					@include trim-margin();
+					a {
+						@include link(white, base-lighter, $fw: 700);
+						
+						
+						&.active {
+							color: getColor(base-lighter);
+						}
+						&.btn {
+							border: remCal(2) solid getColor(white);
+							border-radius: 999px;
+							padding: remCal(10) remCal(35);
+							&.active {
+								border-color: getColor(base-lighter);
+							}
+							&:hover {
+								border-color: getColor(base-lighter);
+							}
+						}
+					}
+				}
+			}
+		}
+		.nav-function {
+			a {
+				@include link(white, base-lighter, $fsz: 20);
+				margin-left: remCal(10);
+				margin-right: remCal(10);
+				@include trim-margin;
+			}
+			#open-nav {
+				display: none;
+			}
+		}	
+	}
+}

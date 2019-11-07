@@ -5,3 +5,16 @@
 @import "base/reset";
 @import "base/transition";
 @import "base/typography";
+@import "base/animation";
+@import "base/align";
+
+@import "components/button";
+@import "components/section-header";
+@import "components/slider-control";
+
+@import "layouts/header";
+@import "layouts/product";
+@import "layouts/news";
+@import "layouts/footer";
+
+@import "pages/index";

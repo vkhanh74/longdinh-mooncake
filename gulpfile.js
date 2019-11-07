@@ -72,7 +72,7 @@ function minifyImage() {
 
 function moveFonts() {
     return gulp.src(paths.fonts)
-        .pipe(gulp.dest('dist/fonts'));
+        .pipe(gulp.dest('dist/webfonts'));
 }
 
 function cleanBuild(done) {

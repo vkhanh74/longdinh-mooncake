@@ -1,0 +1,28 @@
+.slick-slider {
+	&:hover {
+		.arrow {
+			opacity: 1;
+		}
+	}
+	.arrow {
+		background-color: setColor(base);
+		border: 1px solid setColor(base-lighter);
+		padding: remCal(10);
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 3;
+		@include link(white, white, $fsz: 20, $lh: 0);
+		opacity: 0;
+		
+		&.prev-arrow {
+			left: 15px;
+		}
+		&.next-arrow {
+			right: 15px;
+		}
+		@include media-breakpoint-down(md) {
+			opacity: 1;
+		}
+	}
+	}

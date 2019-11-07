@@ -35,7 +35,10 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
+    font-size: map-get($font,size);
+    font-family: map-get($font,family);
 	line-height: 1;
+    background-color: #FEFBE2;
 }
 
 ol, ul {
@@ -122,7 +125,20 @@ html {
     font-size: 10px; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
     -ms-text-size-adjust: 100%; /* 2 */
+    @include mobile {
+        font-size: 7.5px;
+    }
+    @include tablet {
+        font-size: 8px;
+    }
+    @include small-desktop {
+        font-size: 8.5px;
+    }
+    @include desktop {
+        font-size: 9px;
+    }
 }
+
 
 /**
  * Address `outline` inconsistency between Chrome and other browsers.
@@ -149,6 +165,7 @@ a:hover {
 img {
     border: 0; /* 1 */
     -ms-interpolation-mode: bicubic; /* 2 */
+    max-width: 100%;
 }
 
 /**
@@ -339,7 +356,7 @@ textarea {
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: setColor(base-lighter);
     text-shadow: none;
 }
 

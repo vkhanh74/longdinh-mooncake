@@ -1,0 +1,12 @@
+.section-header {
+	text-align: center;
+	margin-bottom: remCal(75);
+	h3 {
+		@include typo($color: getColor(base), $fsz: 40, $lh: 1, $cpt: true);
+		font-family: SVN;
+		margin-bottom: remCal(10);
+	}
+	p {
+		@include typo($color: getColor(#5C4826), $fsz: 24, $fw: 700, $lh: 1);
+	}
+}

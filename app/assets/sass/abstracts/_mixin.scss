@@ -1,13 +1,16 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
 //*****************************
 //	Typography
 //*****************************
 
 // $up: Uppercase;
 // $cpt: Capitalize;
-@mixin link($color, $hvr-color, $fsz: 16, $fw: 400, $lh: 1, $up: false, $cpt: false) {
+@mixin link($color, $hvr-color, $fsz: 18, $fw: 400, $lh: 1, $up: false, $cpt: false) {
 	color: setColor($color);
 	font-size: remCal($fsz);
-	font-weight: $fw;
 	text-decoration: none;
 	cursor: pointer;
 	&:hover {
@@ -15,6 +18,13 @@
 	}
 	//Transition
 	@include prefix(transition, $transition)
+	//Font weight
+	@if $fw == 700 {
+		font-family: cambria-bold;
+	}
+	@else {
+		font-family: cambria-regular;
+	}
 	//Line height
 	@if $lh == 1 {
 		line-height: goldLineHeight($fsz);
@@ -37,7 +47,13 @@
 @mixin typo($color: #000, $fsz: 16, $fw: 400, $lh: 1, $up: false, $cpt: false) {
 	color: setColor($color);
 	font-size: remCal($fsz);
-	font-weight: $fw;
+	//Font weight
+	@if $fw == 700 {
+		font-family: cambria-bold;
+	}
+	@else {
+		font-family: cambria-regular;
+	}
 	//Line height
 	@if $lh == 1 {
 		line-height: goldLineHeight($fsz);
@@ -57,6 +73,63 @@
   	}
 }
 
+//Text line limit
+@mixin text-limit($line-to-show,$lh,$max-height: $line-to-show*$lh) {
+	overflow: hidden;
+   	text-overflow: ellipsis;
+	display: -webkit-box!important;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $line-to-show; /* number of lines to show */
+	line-height: $lh;        /* fallback */
+	max-height: $max-height;       /* fallback */
+}
+
+@mixin trim-margin {
+	&:first-child {
+		margin-left: 0;
+	}
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+//*****************************
+//	Button
+//*****************************
+
+@mixin button($pd: remCal(15) remCal(35),
+			$bg-color: white,
+			$hvr-color: white,
+			$color: base,
+			$hvr-bg-color: base,
+			$border-color: base,
+			$hvr-border-color: base,
+			$fsz: 16,
+			$btn-rd: 999px,
+			$border-thick: 2) {
+	cursor: pointer;
+	background-color: setColor($bg-color);
+	text-transform: capitalize;
+	border: remCal($border-thick) solid setColor($border-color);
+	display: inline-block;
+	padding: $pd;
+	text-decoration: none;
+	z-index: 1;
+	@include typo($color: $color, $fsz: $fsz, $fw: 700, $lh: 0);
+	@include prefix(border-radius, $btn-rd);
+	@include prefix(transition, $transition)
+	&:hover {
+		color: setColor($hvr-color);
+		background-color: setColor($hvr-bg-color);
+		border: $border-thick solid setColor($hvr-border-color);
+		text-decoration: none;
+	}
+	&:focus {
+		outline: 0;
+		box-shadow: 0;
+	}
+} 
+
 //*****************************
 //	Form
 //*****************************
@@ -64,9 +137,9 @@
 // $brd: Boreder-radius;
 
 //Input
-@mixin input($pd-ver:15,$pd-hoz:15,$width: 100%,$height: auto,$brd: 0px) {
-	background-color: setColor(white);
-	border: 1px solid setColor(black);
+@mixin input($borer-color, $fsz: 16,$pd-ver:15,$pd-hoz:15,$width: 100%,$height: auto,$brd: 0px) {
+	background-color: setColor(trans);
+	border: 1px solid $borer-color;
 	height: remCal($height);
 	width: $width;
 	transition: $transition;
@@ -81,11 +154,11 @@
 		outline: 0;
 		box-shadow: none;
 	}
-	@include typo($lh: $height);
+	@include typo($fsz: $fsz,$lh: $height);
 	@include prefix(border-radius, $brd);
 	
 	@include input-pseudo-class {
-		@include typo($lh: $height,$color: #aeaeae);
+		@include typo($fsz: $fsz, $lh: $height,$color: #aeaeae);
 	}
 }
 
@@ -170,4 +243,54 @@
       	#{'&::-' + $prefix + '-' + 'placeholder'} {@content};
 	}
 	&::placeholder {@content};
+}
+
+//*****************************
+//	Responsive
+//*****************************
+
+
+ 
+// Respond-To Mixin
+@mixin respond-to($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        $value: map-get($breakpoints, $breakpoint);
+        @media screen and (max-width: $value) {
+            @content;
+        }
+    }
+    @else {
+    	@warn "Unknown `#{$breakpoint}` in $breakpoints";
+    }
+}
+
+
+@mixin mobile {
+	@include respond-to(sm) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@include respond-to(md) {
+		@content;
+	}
+}
+
+@mixin small-desktop {
+	@include respond-to(lg) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@include respond-to(xl) {
+		@content;
+	}
+}
+
+@mixin large-desktop {
+	@include respond-to(xxl) {
+		@content;
+	}
 }

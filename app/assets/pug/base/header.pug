@@ -1,0 +1,24 @@
+header(class= crtPage == 1 ? 'absolute' : null)
+	.custom-container
+		.header-content
+			a.logo(href="index.html")
+				img(src="assets/images/logo.png", alt="Logo")
+			nav
+				ul
+					li
+						a(href="index.html" class= crtPage == 1 ? 'active nav-link' : 'nav-link') Trang chủ
+					li
+						a(href="about.html" class= crtPage == 2 ? 'active nav-link' : 'nav-link') Về chúng tôi
+					li
+						a(href="moon-cake.html" class= crtPage == 3 ? 'active nav-link' : 'nav-link') Bánh trung thu 2019
+					li
+						a(href="news.html" class= crtPage == 4 ? 'active nav-link' : 'nav-link') Tin tức
+					li
+						a.btn(href="contact.html" class= crtPage == 5 ? 'active nav-link' : 'nav-link') Liên hệ đặt bánh
+			.nav-function
+				a(href="#")
+					i.fal.fa-search
+				a(href="#")
+					i.fal.fa-shopping-bag
+				a#open-nav(href="#")
+					i.fal.fa-bars
