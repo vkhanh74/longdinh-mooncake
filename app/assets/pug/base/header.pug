@@ -1,4 +1,4 @@
-header(class= crtPage == 1 ? 'absolute' : null)
+.header(class= crtPage == 1 ? 'absolute' : null)
 	.custom-container
 		.header-content
 			a.logo(href="index.html")
@@ -16,9 +16,9 @@ header(class= crtPage == 1 ? 'absolute' : null)
 					li
 						a.btn(href="contact.html" class= crtPage == 5 ? 'active nav-link' : 'nav-link') Liên hệ đặt bánh
 			.nav-function
-				a(href="#")
+				a#open-search(href="#")
 					i.fal.fa-search
 				a(href="#")
 					i.fal.fa-shopping-bag
-				a#open-nav(href="#")
+				a.open-nav(href="#")
 					i.fal.fa-bars

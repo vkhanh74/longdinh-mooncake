@@ -13,7 +13,27 @@
     <!--endbuild-->
   </head>
   <body>
-    <header>
+    <div id="loader">
+      <div class="loader-content"><img id="loader-logo" src="assets/images/logo.png" alt="Logo"/>
+        <h1 id="loader-title">Bánh trung thu Long Đình</h1>
+      </div>
+    </div>
+    <div id="search">
+      <div class="overlay"></div><a id="close-search" href="#"><i class="fal fa-times"></i></a>
+      <div class="search-content">
+        <div class="custom-container">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <form action="about.html">
+                <input type="text" name="search" placeholder="Tìm kiếm dòng bánh, vị bánh trung thu"/>
+                <button><i class="fal fa-paper-plane"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header">
       <div class="custom-container">
         <div class="header-content"><a class="logo" href="index.html"><img src="assets/images/logo.png" alt="Logo"/></a>
           <nav>
@@ -25,14 +45,15 @@
               <li><a class="btn nav-link" href="contact.html">Liên hệ đặt bánh</a></li>
             </ul>
           </nav>
-          <div class="nav-function"><a href="#"><i class="fal fa-search"></i></a><a href="#"><i class="fal fa-shopping-bag"></i></a><a id="open-nav" href="#"><i class="fal fa-bars"></i></a></div>
+          <div class="nav-function"><a id="open-search" href="#"><i class="fal fa-search"></i></a><a href="#"><i class="fal fa-shopping-bag"></i></a><a class="open-nav" href="#"><i class="fal fa-bars"></i></a></div>
         </div>
       </div>
-    </header>
+    </div>
     <h1>Happing coding</h1>
     <!--build:js assets/js/main.min.js-->
     <script rel="script/javascript" src="assets/js/jquery.min.js"></script>
     <script rel="script/javascript" src="assets/js/slick.min.js"></script>
+    <script rel="script/javascript" src="assets/js/TweenMax.min.js"></script>
     <script rel="script/javascript" src="assets/js/main.js"></script>
     <!--endbuild-->
     <footer>

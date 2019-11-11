@@ -1,7 +1,32 @@
-header {
+%isScroll {
+	position: fixed!important;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: setColor(base);
+	transform: translateY(0);
+	padding-top: remCal(10);
+	padding-bottom: remCal(10);
+	transform: translateY(0);
+}
+
+%hide {
+	transform: translateY(-200px)!important;
+}
+
+.header {
 	background-color: getColor(base);
 	padding-top: remCal(20);
 	padding-bottom: remCal(20);
+	transition: 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+	&.hide {
+		@extend %hide;
+	}
+
+	&.isScroll {
+		@extend %isScroll;
+	}
+
 	&.absolute {
 		position: absolute;
 		top: 0;
@@ -9,7 +34,14 @@ header {
 		width: 100%;
 		background-color: getColor(trans);
 		z-index: 5;
+		&.hide {
+			@extend %hide;
+		}
+		&.isScroll {
+			@extend %isScroll;
+		}
 	}
+
 	&.isMobile {
 		background-color: getColor(base);
 		position: unset;
@@ -20,34 +52,10 @@ header {
 				}
 			}
 			nav {
-				position: fixed;
-				left: -100%;
-				top: 0;
-				width: 280px;
-				height: 100vh;
-				background-color: getColor(base);
-				padding: remCal(50) remCal(30);
-				z-index: 10;
-				overflow-y: auto;
-				border-right: 2px solid transparent;
-			  	background-clip: padding-box, border-box;
-			  	background-origin: padding-box, border-box;
-			    background-image: linear-gradient(getColor(base), getColor(base)), linear-gradient(180deg, getColor(base) 0%, #FACF5A 50%, getColor(base) 100%);
-			    transition: $transition;
-				ul {
-					li {
-						display: block;
-						margin-left: 0;
-						margin-right: 0;
-						margin-bottom: remCal(50);
-					}
-				}
-				&.isOpen {
-					left: 0;
-				}
+				display: none;
 			}
 			.nav-function {
-				#open-nav {
+				.open-nav {
 					display: inline-block;
 				}
 			}
@@ -99,9 +107,44 @@ header {
 				margin-right: remCal(10);
 				@include trim-margin;
 			}
-			#open-nav {
+			.open-nav {
 				display: none;
 			}
 		}	
+	}
+}
+
+//Sidebar navigation
+#clone-menu {
+	@extend .header;
+	padding: 0;
+	.header-content {
+		nav {
+			position: fixed;
+			left: -100%;
+			top: 0;
+			width: 280px;
+			height: 100vh;
+			background-color: getColor(base);
+			padding: remCal(50) remCal(30);
+			z-index: 10;
+			overflow-y: auto;
+			border-right: 2px solid transparent;
+		  	background-clip: padding-box, border-box;
+		  	background-origin: padding-box, border-box;
+		    background-image: linear-gradient(getColor(base), getColor(base)), linear-gradient(180deg, getColor(base) 0%, #FACF5A 50%, getColor(base) 100%);
+		    transition: 0.8s cubic-bezier(0.65, 0.05, 0.36, 1);
+			ul {
+				li {
+					display: block;
+					margin-left: 0;
+					margin-right: 0;
+					margin-bottom: remCal(50);
+				}
+			}
+			&.isOpen {
+				left: 0;
+			}
+		}
 	}
 }

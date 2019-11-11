@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Homepage</title>
+    <title>Trang chủ</title>
     <!--build:css assets/css/styles.min.css-->
     <link rel="stylesheet" href="assets/css/custom_bootstrap.css"/>
     <link rel="stylesheet" href="assets/css/slick.min.css"/>
@@ -13,7 +13,27 @@
     <!--endbuild-->
   </head>
   <body>
-    <header class="absolute">
+    <div id="loader">
+      <div class="loader-content"><img id="loader-logo" src="assets/images/logo.png" alt="Logo"/>
+        <h1 id="loader-title">Bánh trung thu Long Đình</h1>
+      </div>
+    </div>
+    <div id="search">
+      <div class="overlay"></div><a id="close-search" href="#"><i class="fal fa-times"></i></a>
+      <div class="search-content">
+        <div class="custom-container">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <form action="about.html">
+                <input type="text" name="search" placeholder="Tìm kiếm dòng bánh, vị bánh trung thu"/>
+                <button><i class="fal fa-paper-plane"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header absolute">
       <div class="custom-container">
         <div class="header-content"><a class="logo" href="index.html"><img src="assets/images/logo.png" alt="Logo"/></a>
           <nav>
@@ -25,16 +45,16 @@
               <li><a class="btn nav-link" href="contact.html">Liên hệ đặt bánh</a></li>
             </ul>
           </nav>
-          <div class="nav-function"><a href="#"><i class="fal fa-search"></i></a><a href="#"><i class="fal fa-shopping-bag"></i></a><a id="open-nav" href="#"><i class="fal fa-bars"></i></a></div>
+          <div class="nav-function"><a id="open-search" href="#"><i class="fal fa-search"></i></a><a href="#"><i class="fal fa-shopping-bag"></i></a><a class="open-nav" href="#"><i class="fal fa-bars"></i></a></div>
         </div>
       </div>
-    </header>
+    </div>
     <div class="banner">
       <div class="custom-container">
         <div class="row align-items-center">
           <div class="offset-lg-5 col-lg-7">
             <div class="banner-content">
-              <h2 class="banner-content--title">Bánh trung thu đẳng cấp </br> Cho tình thêm trọn vẹn</h2>
+              <h2 class="banner-content--title"><span>Bánh</span> <span>trung</span> <span>thu</span> <span>đẳng</span> <span>cấp</span> </br> <span>Cho</span> <span>tình</span> <span>thêm</span> <span>trọn</span> <span>vẹn</span></h2>
               <p class="banner-content--intro">Với LongDinh Mooncake,  trung thu là câu chuyện của tinh hoa kể nên bởi những chiếc bánh thượng hạng được chế biến kỳ công ; bởi lời chúc ý nghĩa gói gọn trong mòn quà trung thu trao tay cho tình thân thêm vẹn trời, toàn bộ tinh hoa thể hiện qua tuyệt tác Mỹ - Vị - Tình</p>
               <div class="banner-btn_group"><a class="play-btn" href="#"> <i class="fas fa-play"></i>Xem video giới thiệu</a><a class="btn btn--base-lighter-outline" href="#">Tìm hiểu thêm</a></div>
             </div>
@@ -46,6 +66,7 @@
     <section class="section-1">
       <div class="decoration">
         <div class="decoration-top"><img class="decoration-top--1" src="assets/images/long-den-1.png" alt="Decoration"/><img class="decoration-top--2" src="assets/images/long-den-2.png" alt="Decoration"/></div>
+        <div class="decoration-middle"><img class="decoration-middle" src="assets/images/banh-tt.png" alt="Decoration"/></div>
         <div class="decoration-bottom"><img class="decoration-bottom--1" src="assets/images/hoa-1.png" alt="Decoration"/><img class="decoration-bottom--2" src="assets/images/hoa-2.png" alt="Decoration"/></div>
       </div>
       <div class="our-story">
@@ -197,6 +218,13 @@
                 <p class="news-content--cited">Nhiều loại bánh trung thu mẫu mã mới lạ thu hút được sự yêu thích của nhiều người.</p>
               </div>
             </div>
+            <div class="news">
+              <div class="news-image"><img src="assets/images/news/6.jpg" alt="Hình ảnh tin tức"/></div>
+              <div class="news-content"><a class="news-content--title" href="news_detail.html">Những loại bánh trung thu 2019 đang khiến nhiều bạn trẻ thích thú</a>
+                <div class="news-content--info"><span><i class="fal fa-user"></i>Admin</span><span><i class="fal fa-clock"></i>1/9/2019</span><span><i class="fal fa-eye"></i>15</span></div>
+                <p class="news-content--cited">Nhiều loại bánh trung thu mẫu mã mới lạ thu hút được sự yêu thích của nhiều người.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -219,6 +247,7 @@
     <!--build:js assets/js/main.min.js-->
     <script rel="script/javascript" src="assets/js/jquery.min.js"></script>
     <script rel="script/javascript" src="assets/js/slick.min.js"></script>
+    <script rel="script/javascript" src="assets/js/TweenMax.min.js"></script>
     <script rel="script/javascript" src="assets/js/main.js"></script>
     <!--endbuild-->
     <footer>

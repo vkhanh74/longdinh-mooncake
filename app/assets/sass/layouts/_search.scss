@@ -1,0 +1,36 @@
+#search {
+	height: 100vh;
+	width: 100vw;
+	background-color: #FEFBE2;
+	z-index: 30;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	#close-search {
+		position: fixed;
+		top: remCal(30);
+		right: remCal(30);
+		@include link(setSchemaColor(gray), base, $fsz: 30, $lh: 0);
+	}
+	.search-content {
+		width: 100%;
+		form {
+			position: relative;
+			input {
+				@include input(setSchemaColor(gray),$fsz:25,$pd-hoz:30, $fw: 700);
+				border-width: 0 0 remCal(2) 0;
+				text-align: center;
+				padding-right: 70px;
+			}
+			button {
+				@include button($pd: 0, $fsz: 25, $bg-color: trans, $hvr-color: base, $color: setSchemaColor(gray,dark), $hvr-bg-color: trans, $border-thick: 0);
+				position: absolute;
+				top: 15px;
+				right: 30px;
+			}
+		}
+	}
+}

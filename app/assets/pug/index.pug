@@ -2,14 +2,17 @@ extends base/layout.pug
 
 block title
 	- var crtPage = 1;
-	title Homepage
+	title Trang chủ
 block content
+	//- #clone-menu
+		.custom-container
+			header
 	.banner
 		.custom-container
 			.row.align-items-center
 				.offset-lg-5.col-lg-7
 					.banner-content
-						h2.banner-content--title Bánh trung thu đẳng cấp </br> Cho tình thêm trọn vẹn
+						h2.banner-content--title <span>Bánh</span> <span>trung</span> <span>thu</span> <span>đẳng</span> <span>cấp</span> </br> <span>Cho</span> <span>tình</span> <span>thêm</span> <span>trọn</span> <span>vẹn</span>
 						p.banner-content--intro Với LongDinh Mooncake,  trung thu là câu chuyện của tinh hoa kể nên bởi những chiếc bánh thượng hạng được chế biến kỳ công ; bởi lời chúc ý nghĩa gói gọn trong mòn quà trung thu trao tay cho tình thân thêm vẹn trời, toàn bộ tinh hoa thể hiện qua tuyệt tác Mỹ - Vị - Tình
 						.banner-btn_group
 							a.play-btn(href="#") 
@@ -24,6 +27,8 @@ block content
 			.decoration-top
 				img.decoration-top--1(src="assets/images/long-den-1.png", alt="Decoration")
 				img.decoration-top--2(src="assets/images/long-den-2.png", alt="Decoration")
+			.decoration-middle
+				img.decoration-middle(src="assets/images/banh-tt.png", alt="Decoration")
 			.decoration-bottom
 				img.decoration-bottom--1(src="assets/images/hoa-1.png", alt="Decoration")
 				img.decoration-bottom--2(src="assets/images/hoa-2.png", alt="Decoration")
@@ -175,6 +180,22 @@ block content
 					.news
 						.news-image
 							img(src="assets/images/news/9.jpeg", alt="Hình ảnh tin tức")
+						.news-content
+							a.news-content--title(href="news_detail.html") Những loại bánh trung thu 2019 đang khiến nhiều bạn trẻ thích thú
+							.news-content--info
+								span
+									i.fal.fa-user
+									| Admin
+								span
+									i.fal.fa-clock
+									| 1/9/2019
+								span
+									i.fal.fa-eye
+									| 15
+							p.news-content--cited Nhiều loại bánh trung thu mẫu mã mới lạ thu hút được sự yêu thích của nhiều người.
+					.news
+						.news-image
+							img(src="assets/images/news/6.jpg", alt="Hình ảnh tin tức")
 						.news-content
 							a.news-content--title(href="news_detail.html") Những loại bánh trung thu 2019 đang khiến nhiều bạn trẻ thích thú
 							.news-content--info

@@ -137,7 +137,7 @@
 // $brd: Boreder-radius;
 
 //Input
-@mixin input($borer-color, $fsz: 16,$pd-ver:15,$pd-hoz:15,$width: 100%,$height: auto,$brd: 0px) {
+@mixin input($borer-color, $fsz: 16, $fw: 400,$pd-ver:15,$pd-hoz:15,$width: 100%,$height: auto,$brd: 0px) {
 	background-color: setColor(trans);
 	border: 1px solid $borer-color;
 	height: remCal($height);
@@ -154,11 +154,11 @@
 		outline: 0;
 		box-shadow: none;
 	}
-	@include typo($fsz: $fsz,$lh: $height);
+	@include typo($fsz: $fsz,$lh: $height, $fw: $fw);
 	@include prefix(border-radius, $brd);
 	
 	@include input-pseudo-class {
-		@include typo($fsz: $fsz, $lh: $height,$color: #aeaeae);
+		@include typo($fsz: $fsz, $lh: $height, $fw: $fw,$color: #aeaeae);
 	}
 }
 

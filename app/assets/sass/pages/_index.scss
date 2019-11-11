@@ -11,7 +11,7 @@
 		position: relative;
 		z-index: 1;
 		.banner-content--title {
-			@include typo($color: base-lighter, $fsz: 75, $lh: 95);
+			@include typo($color: base-lighter, $fsz: 75, $lh: 1);
 			font-family: SVN;
 			margin-bottom: remCal(30);
 		}
@@ -66,8 +66,11 @@
 		}
 	}
 	@include mobile {
-		padding: remCal(100) 0;
 		.banner-content {
+			.banner-content--title {
+				@include typo($color: base-lighter, $fsz: 45, $lh: 1);
+			font-family: SVN;
+			}
 			.banner-btn_group {
 				.play-btn {
 					margin-right: remCal(25);
@@ -104,6 +107,14 @@
 					right: remCal(50);
 					animation: swing2 ease-in-out 1.5s infinite alternate;
 				}
+			}
+		}
+		.decoration-middle {
+			img {
+				position: absolute;
+				max-width: remCal(330);
+				top: 50%;
+				right: remCal(-30);
 			}
 		}
 		.decoration-bottom {
@@ -210,9 +221,25 @@
 			}
 		}
 	}
+
 	@include small-desktop {
 		.decoration {
 			display: none;
+		}
+		.our-products {
+			.product-type {
+				.product-type_img {
+					height: remCal(430);
+				}
+				&.small-product-type {
+					.product-type_img {
+						height: remCal(200);
+					}
+				}
+				&.big-product-type {
+					margin-bottom: remCal(30);
+				}
+			}
 		}
 	}
 	@include tablet {
@@ -236,9 +263,12 @@
 		}
 		.our-products {
 			.product-type {
+				.product-type_img {
+					height: remCal(430);
+				}
 				&.small-product-type {
 					.product-type_img {
-						max-height: inherit;
+						height: remCal(200);
 					}
 				}
 				&.big-product-type {

@@ -125,18 +125,18 @@ html {
     font-size: 10px; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
     -ms-text-size-adjust: 100%; /* 2 */
-    @include mobile {
-        font-size: 7.5px;
+    @include small-desktop {
+        font-size: 9.5px;
     }
     @include tablet {
-        font-size: 8px;
-    }
-    @include small-desktop {
-        font-size: 8.5px;
-    }
-    @include desktop {
         font-size: 9px;
     }
+    @include mobile {
+        font-size: 8.5px;
+    }
+    
+   
+    
 }
 
 

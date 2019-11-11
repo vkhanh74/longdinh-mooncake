@@ -1,0 +1,23 @@
+#loader {
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	background-color: setColor(base);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	.loader-content {
+		text-align: center;
+		img {
+			max-width: remCal(150);
+			margin-bottom: remCal(30);
+		}
+		h1 {
+			@include typo($color: white, $fsz: 50, $cpt: true);
+			font-family: SVN;
+		}
+	}
+}
