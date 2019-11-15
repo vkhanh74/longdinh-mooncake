@@ -1,0 +1,24 @@
+- 
+	function product(id, image ,name, price, discount, type) {
+	  	this.id = id;
+	  	this.image = image;
+	  	this.name = name;
+	  	this.price = price;
+	  	this.discount = discount;
+	  	this.type = type;
+	  	this.printPrice = () => {
+	  		return this.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	  	}
+	}
+
+	const products = [
+		new product(1,'assets/images/products/sp1.png','Trăng vàng hồng ngọc tâm an', 800000, false, 'box'),
+		new product(2,'assets/images/products/sp2.png','Trăng vàng hồng ngọc an bình', 690000, 900000, 'box'),
+		new product(3,'assets/images/products/sp3.png','Trăng vàng hồng ngọc an nhiên (tím)', 1100000, 1200000, 'box'),
+		new product(4,'assets/images/products/sp4.png','Trăng vàng pha lê toàn phúc (vàng)', 700000, false, 'box'),
+		new product(5,'assets/images/products/sp5.png','Trăng vàng pha lê vạn phúc (xanh)', 1200000, false, 'box'),
+		new product(6,'assets/images/products/sp6.png','Trăng vàng kim cương trường khang', 2990000, false, 'box'),
+		new product(7,'assets/images/products/sp7.png','Trăng vàng hồng ngọc an phú (vàng)', 950000, 1000000, 'box'),
+		new product(8,'assets/images/products/sp8.png','Trăng vàng hồng ngọc an thịnh (đỏ)', 890000, false, 'box'),
+		new product(9,'assets/images/products/sp9.png','Trăng vàng hoàng kim vinh hoa (vàng)', 2190000, false, 'box'),
+	]

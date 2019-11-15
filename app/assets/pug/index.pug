@@ -1,7 +1,7 @@
 extends base/layout.pug
-
 block title
 	- var crtPage = 1;
+	- var isPadding = false;
 	title Trang chủ
 block content
 	//- #clone-menu
@@ -104,39 +104,17 @@ block content
 					h3 Sản phẩm bán chạy 
 					p Những loại bánh được khách hàng ưa chuộng và đặt mua nhiều nhất
 				.products-group
-					.product
-						.product-image
-							img(src="assets/images/products/sp1.png", alt="Ảnh sản phẩm")
-							a.btn-cart-add(href="#") Thêm vào giỏ hàng
-						.prodcut-content
-							a.prodcut-content--name(href="shop_detail.html") Trăng Vàng Pha Lê Toàn Phúc
-							.product-content_price
-								h5 805.000
-					.product
-						.product-image
-							img(src="assets/images/products/sp2.png", alt="Ảnh sản phẩm")
-							a.btn-cart-add(href="#") Thêm vào giỏ hàng
-						.prodcut-content
-							a.prodcut-content--name(href="shop_detail.html") Trăng Vàng Hồng Ngọc An Nhiên
-							.product-content_price
-								h5 790.000
-									span 900.000
-					.product
-						.product-image
-							img(src="assets/images/products/sp3.png", alt="Ảnh sản phẩm")
-							a.btn-cart-add(href="#") Thêm vào giỏ hàng
-						.prodcut-content
-							a.prodcut-content--name(href="shop_detail.html") Trăng Vàng Hồng Ngọc An Tâm
-							.product-content_price
-								h5 750.000
-					.product
-						.product-image
-							img(src="assets/images/products/sp4.png", alt="Ảnh sản phẩm")
-							a.btn-cart-add(href="#") Thêm vào giỏ hàng
-						.prodcut-content
-							a.prodcut-content--name(href="shop_detail.html") Trăng Vàng Pha Lê Toàn Phúc
-							.product-content_price
-								h5 1.960.000
+					each product in products.filter((product) => product.type == 'box').slice(0,5)
+						.product
+							.product-image
+								img(src=product.image)
+								a.btn-cart-add(href="#") Thêm vào giỏ hàng
+							.prodcut-content
+								a.prodcut-content--name(href="shop-detail.html")= product.name
+								.product-content_price
+									h5= product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+										if product.discount
+											span= product.discount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 				.item-center
 					a.btn.btn--base(href="shop.html") Xem thêm sản phẩm
 		.feature-news

@@ -1,0 +1,28 @@
+extends base/layout.pug
+
+block title
+	- var crtPage = 3;
+	title Sản phẩm bánh trung thu
+block content
+	.shop-detail
+		.custom-container
+			.shop-detail_product
+				.shop-detail_product__left
+					.backdrop
+					.product-image
+						#parallax-wrapper
+							img(src="assets/images/parallax-product.png" alt="Hình ảnh sản phẩm" data-speed="0.02")
+				.shop-detail_product__right
+					.shop-detail_product__right_content
+						h5.product-category Dòng bánh trăng vàng
+						h2.product-name Trăng Vàng Hồng Ngọc An Nhiên (Tím)
+						h3.product-price Giá bán: 
+							span 549.000 VND
+						.product-information
+							h5 Thông tin thêm:
+							p ● Hộp 4 bánh gồm: Cua Sốt Kiểu Singapore, Jambon Ngũ Hạt, Đậu Đỏ Hạnh Nhân, Hạt Sen Hạt Dưa.
+							p ● (Vỏ nướng, 1 trứng, 160g)/mỗi bánh. 
+							p ● Sản phẩm chỉ bán theo hộp
+							p ● Tặng ngay lồng đèn trung thu cao cấp khi mua bánh . Xem thêm
+						a.btn.btn--base-fill(href="#") Mua ngay
+		

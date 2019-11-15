@@ -1,0 +1,111 @@
+.shop {
+	margin-bottom: remCal(100);
+	.shop-header {
+		.shop-header_banners {
+			margin-bottom: remCal(30);
+			img {
+				height: remCal(280);
+				width: 100%;
+				object-fit: cover;
+				border-radius: remCal(5);
+			}
+		}
+		.shop-header_filter {
+			margin-bottom: remCal(30);
+			text-align: right;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			flex-wrap: wrap;
+			#open-sidebar {
+				display: none;
+			}
+			.sort-select {
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				p {
+					@include typo($fsz:18,$lh:0,$color: setSchemaColor(gray));
+					margin-right: remCal(15);
+				}
+				select {
+					@include select($width: 200, $height: 35);
+				}
+			}
+		}
+	}
+	#sidebar-filter {
+		.sidebar-header {
+			margin-bottom: remCal(30);
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding-bottom: remCal(15);
+			border-bottom: remCal(1) solid #ccc;
+			a {
+				@include link(setSchemaColor(gray), base, $fsz: 16);
+				i {
+					margin-right: remCal(5);
+				}
+			}
+			#reset-filter {
+				margin-left: remCal(15);
+				@include button($pd: remCal(8) remCal(16),
+								$bg-color: trans,
+								$hvr-color: white,
+								$color: base,
+								$hvr-bg-color: base,
+								$border-color: base,
+								$hvr-border-color: base,
+								$fsz: 16,
+								$btn-rd: remCal(5),
+								$border-thick: 2);
+			}
+		}
+		.sidebar-banner {
+			img {
+				border-radius: remCal(5);
+			}
+		}
+	}
+	.shop-product_group {
+		margin-bottom: remCal(50);
+	}
+	@include small-desktop {
+		.shop-header {
+			.shop-header_banners {
+				a {
+					img {
+						height: auto;
+					}
+				}
+			}
+			.shop-header_filter {
+				#open-sidebar {
+					margin-right: remCal(50);
+					display: block;
+				}
+			}
+		}
+	}
+
+	@include mobile {
+		.shop-header {
+			.shop-header_banners {
+				a {
+					&:first-child {
+						img {
+							margin-bottom: remCal(30);
+						}
+					}
+				}
+			}
+			.shop-header_filter {
+				#open-sidebar {
+					display: block;
+					margin-bottom: remCal(20);
+				}
+			}
+		}
+	}
+}

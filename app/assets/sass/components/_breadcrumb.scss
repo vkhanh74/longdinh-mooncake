@@ -1,0 +1,14 @@
+.breadcrumb {
+	a {
+		@include link(white, base)
+		&.prvPage {
+			&:after {
+				content: ".";
+				padding: 0 remCal(15);
+			}
+		}
+		&.crtPage {
+			font-family: cambria-bold;
+		}
+	}
+}

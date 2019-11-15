@@ -11,6 +11,9 @@
 @import "components/button";
 @import "components/section-header";
 @import "components/slider-control";
+@import "components/breadcrumb";
+@import "components/radio-button";
+@import "components/pagination";
 
 @import "layouts/header";
 @import "layouts/product";
@@ -18,5 +21,11 @@
 @import "layouts/footer";
 @import "layouts/loader";
 @import "layouts/search";
+@import "layouts/page-header";
+@import "layouts/content";
+@import "layouts/filter-sidebar";
 
 @import "pages/index";
+@import "pages/about";
+@import "pages/shop";
+@import "pages/shop-detail";

@@ -1,0 +1,13 @@
+.content {
+	padding-top: remCal(100);
+	&.noPadding {
+		padding-top: 0;
+	}
+	@include small-desktop {
+		padding-top: remCal(80);
+		&.noPadding {
+			padding-top: remCal(80);
+		}
+	}
+}
+

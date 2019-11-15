@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Bánh trung thu 2019</title>
+    <!--build:css assets/css/styles.min.css-->
+    <link rel="stylesheet" href="assets/css/custom_bootstrap.css"/>
+    <link rel="stylesheet" href="assets/css/slick.min.css"/>
+    <link rel="stylesheet" href="assets/css/all.min.css"/>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+    <!--endbuild-->
+  </head>
+  <body>
+    <div id="loader">
+      <div class="loader-content"><img id="loader-logo" src="assets/images/logo.png" alt="Logo"/>
+        <h1 id="loader-title">Bánh trung thu Long Đình</h1>
+      </div>
+    </div>
+    <div id="search">
+      <div class="overlay"></div><a id="close-search" href="#"><i class="fal fa-times"></i></a>
+      <div class="search-content">
+        <div class="custom-container">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <form action="about.html">
+                <input type="text" name="search" placeholder="Tìm kiếm dòng bánh, vị bánh trung thu"/>
+                <button><i class="fal fa-paper-plane"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header">
+      <div class="custom-container">
+        <div class="header-content"><a class="logo" href="index.html"><img src="assets/images/logo.png" alt="Logo"/></a>
+          <nav>
+            <ul>
+              <li><a class="nav-link" href="index.html">Trang chủ</a></li>
+              <li><a class="nav-link" href="about.html">Về chúng tôi</a></li>
+              <li><a class="active nav-link" href="mooncake-2020.html">Bánh trung thu 2020</a></li>
+              <li><a class="nav-link" href="news.html">Tin tức</a></li>
+              <li><a class="btn nav-link" href="contact.html">Liên hệ đặt bánh</a></li>
+            </ul>
+          </nav>
+          <div class="nav-function"><a id="open-search" href="#"><i class="fal fa-search"></i></a><a href="#"><i class="fal fa-shopping-bag"></i></a><a class="open-nav" href="#"><i class="fal fa-bars"></i></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="page-header">
+        <div class="custom-container">
+          <div class="page-header_content">
+            <h2>Bánh trung thu 2020</h2>
+            <div class="breadcrumb"><a class="prvPage" href="index.html">Trang chủ</a><a class="crtPage" href="#">Bánh trung thu 2020</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="shop">
+        <div class="custom-container">
+          <div class="row">
+            <div class="col-lg-3">
+              <form id="sidebar-filter" action="">
+                <div class="sidebar-header"><a id="redo-filter" href="#"><i class="fal fa-undo"></i>Làm lại</a><a id="reset-filter" href="#"><i class="fal fa-trash"></i>Bỏ lọc</a></div>
+                <div class="sidebar-section">
+                  <div class="sidebar-section_header">
+                    <h5 class="sidebar-section--title">Loại bánh</h5><span><i class="fal fa-chevron-down"></i></span>
+                  </div>
+                  <div class="radio-wrapper">
+                    <div class="radio-group">
+                      <input id="box" type="radio" name="wrapper" value="box"/>
+                      <label for="box">Bánh theo hộp</label>
+                    </div>
+                    <div class="radio-group">
+                      <input id="piece" type="radio" name="wrapper" value="piece"/>
+                      <label for="piece">Bánh đơn</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="sidebar-section">
+                  <div class="sidebar-section_header">
+                    <h5 class="sidebar-section--title">Vỏ bánh</h5><span><i class="fal fa-chevron-down"></i></span>
+                  </div>
+                  <div class="radio-wrapper">
+                    <div class="radio-group">
+                      <input id="roasted" type="radio" name="crust" value="roasted"/>
+                      <label for="roasted">Bánh nướng</label>
+                    </div>
+                    <div class="radio-group">
+                      <input id="limber" type="radio" name="crust" value="limber"/>
+                      <label for="limber">Bánh dẻo</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="sidebar-section">
+                  <div class="sidebar-section_header">
+                    <h5 class="sidebar-section--title">Dòng bánh</h5><span><i class="fal fa-chevron-down"></i></span>
+                  </div>
+                  <div class="radio-wrapper">
+                    <div class="radio-group">
+                      <input id="gift" type="radio" name="type" value="gift"/>
+                      <label for="gift">Biếu tặng</label>
+                    </div>
+                    <div class="radio-group">
+                      <input id="family" type="radio" name="type" value="family"/>
+                      <label for="family">Gia đình</label>
+                    </div>
+                    <div class="radio-group">
+                      <input id="big" type="radio" name="type" value="big"/>
+                      <label for="big">Bánh lớn</label>
+                    </div>
+                    <div class="radio-group">
+                      <input id="small" type="radio" name="type" value="small"/>
+                      <label for="small">Bánh nhỏ</label>
+                    </div>
+                    <div class="radio-group">
+                      <input id="diet" type="radio" name="type" value="diet"/>
+                      <label for="diet">Ăn chay, ăn kiêng</label>
+                    </div>
+                    <div class="radio-group">
+                      <input id="kid" type="radio" name="type" value="kid"/>
+                      <label for="kid">Thiếu nhi</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="sidebar-section">
+                  <div class="sidebar-section_header">
+                    <h5 class="sidebar-section--title">Khoảng giá</h5><span><i class="fal fa-chevron-down"></i></span>
+                  </div>
+                  <div class="radio-wrapper">
+                    <div class="radio-group">
+                      <input id="under500" type="radio" name="price-range" value="under500"/>
+                      <label for="under500">Dưới 500,000</label>
+                    </div>
+                    <div class="radio-group">
+                      <input id="500to1000" type="radio" name="price-range" value="500to1000"/>
+                      <label for="500to1000">Từ 500,000 đến 10000,000</label>
+                    </div>
+                    <div class="radio-group">
+                      <input id="1000to2000" type="radio" name="price-range" value="1000to2000"/>
+                      <label for="1000to2000">Từ 1,000,000 đến 2,000,000</label>
+                    </div>
+                    <div class="radio-group">
+                      <input id="morethan2000" type="radio" name="price-range" value="morethan2000"/>
+                      <label for="morethan2000">Trên 2,000,000</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="sidebar-section">
+                  <div class="sidebar-section_header">
+                    <h5 class="sidebar-section--title">Nâng cao</h5><span><i class="fal fa-chevron-down"></i></span>
+                  </div>
+                  <div class="radio-wrapper">
+                    <div class="radio-group">
+                      <input id="discount" type="radio" name="advance" value="discount"/>
+                      <label for="discount">Giảm giá</label>
+                    </div>
+                    <div class="radio-group">
+                      <input id="limited" type="radio" name="advance" value="limited"/>
+                      <label for="limited">Số lượng có hạn</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="sidebar-banner"><a class="banner-hover" href="blog-detail.html"><img src="assets/images/shop-sidebar-banner.png" alt="Hình ảnh quảng cáo"/></a></div><a class="btn btn--base" id="close-sidebar" href="">Đóng</a>
+              </form>
+            </div>
+            <div class="col-lg-9">
+              <div class="shop-header">
+                <div class="shop-header_banners">
+                  <div class="row">
+                    <div class="col-sm-6"><a class="banner-hover" href="blog-detail.html"><img src="assets/images/shop-banner.png" alt="Ảnh quảng cáo sản phẩm"/></a></div>
+                    <div class="col-sm-6"><a class="banner-hover" href="blog-detail.html"><img src="assets/images/shop-banner2.png" alt="Ảnh quảng cáo sản phẩm"/></a></div>
+                  </div>
+                </div>
+                <div class="shop-header_filter"><a id="open-sidebar" href="#"> <i class="fal fa-filter"></i>Lọc sản phẩm</a>
+                  <div class="sort-select">
+                    <p>Sắp xếp theo:</p>
+                    <select id="productSort" name="product-sort">
+                      <option value="default" selected="selected">Mặc định</option>
+                      <option value="az">A đến Z</option>
+                      <option value="za">Z đến A</option>
+                      <option value="lowHigh">Giá từ thấp đến cao</option>
+                      <option value="highLow">Giá từ cao đến thấp</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="shop-product_group">
+                <div class="row">
+                  <div class="col-sm-6 col-md-4">
+                    <div class="product">
+                      <div class="product-image"><img src="assets/images/products/sp1.png"/><a class="btn-cart-add" href="#">Thêm vào giỏ hàng</a></div>
+                      <div class="prodcut-content"><a class="prodcut-content--name" href="shop-detail.html">Trăng vàng hồng ngọc tâm an</a>
+                        <div class="product-content_price">
+                          <h5>800,000
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                    <div class="product">
+                      <div class="product-image"><img src="assets/images/products/sp2.png"/><a class="btn-cart-add" href="#">Thêm vào giỏ hàng</a></div>
+                      <div class="prodcut-content"><a class="prodcut-content--name" href="shop-detail.html">Trăng vàng hồng ngọc an bình</a>
+                        <div class="product-content_price">
+                          <h5>690,000<span>900,000</span>
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                    <div class="product">
+                      <div class="product-image"><img src="assets/images/products/sp3.png"/><a class="btn-cart-add" href="#">Thêm vào giỏ hàng</a></div>
+                      <div class="prodcut-content"><a class="prodcut-content--name" href="shop-detail.html">Trăng vàng hồng ngọc an nhiên (tím)</a>
+                        <div class="product-content_price">
+                          <h5>1,100,000<span>1,200,000</span>
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                    <div class="product">
+                      <div class="product-image"><img src="assets/images/products/sp4.png"/><a class="btn-cart-add" href="#">Thêm vào giỏ hàng</a></div>
+                      <div class="prodcut-content"><a class="prodcut-content--name" href="shop-detail.html">Trăng vàng pha lê toàn phúc (vàng)</a>
+                        <div class="product-content_price">
+                          <h5>700,000
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                    <div class="product">
+                      <div class="product-image"><img src="assets/images/products/sp5.png"/><a class="btn-cart-add" href="#">Thêm vào giỏ hàng</a></div>
+                      <div class="prodcut-content"><a class="prodcut-content--name" href="shop-detail.html">Trăng vàng pha lê vạn phúc (xanh)</a>
+                        <div class="product-content_price">
+                          <h5>1,200,000
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                    <div class="product">
+                      <div class="product-image"><img src="assets/images/products/sp6.png"/><a class="btn-cart-add" href="#">Thêm vào giỏ hàng</a></div>
+                      <div class="prodcut-content"><a class="prodcut-content--name" href="shop-detail.html">Trăng vàng kim cương trường khang</a>
+                        <div class="product-content_price">
+                          <h5>2,990,000
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                    <div class="product">
+                      <div class="product-image"><img src="assets/images/products/sp7.png"/><a class="btn-cart-add" href="#">Thêm vào giỏ hàng</a></div>
+                      <div class="prodcut-content"><a class="prodcut-content--name" href="shop-detail.html">Trăng vàng hồng ngọc an phú (vàng)</a>
+                        <div class="product-content_price">
+                          <h5>950,000<span>1,000,000</span>
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                    <div class="product">
+                      <div class="product-image"><img src="assets/images/products/sp8.png"/><a class="btn-cart-add" href="#">Thêm vào giỏ hàng</a></div>
+                      <div class="prodcut-content"><a class="prodcut-content--name" href="shop-detail.html">Trăng vàng hồng ngọc an thịnh (đỏ)</a>
+                        <div class="product-content_price">
+                          <h5>890,000
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                    <div class="product">
+                      <div class="product-image"><img src="assets/images/products/sp9.png"/><a class="btn-cart-add" href="#">Thêm vào giỏ hàng</a></div>
+                      <div class="prodcut-content"><a class="prodcut-content--name" href="shop-detail.html">Trăng vàng hoàng kim vinh hoa (vàng)</a>
+                        <div class="product-content_price">
+                          <h5>2,190,000
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pagination">
+                <ul>
+                  <li class="active"><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><span>. . .</span></li>
+                  <li><a href="#">7</a></li>
+                  <li><a href="#">8</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--build:js assets/js/main.min.js-->
+    <script rel="script/javascript" src="assets/js/jquery.min.js"></script>
+    <script rel="script/javascript" src="assets/js/slick.min.js"></script>
+    <script rel="script/javascript" src="assets/js/TweenMax.min.js"></script>
+    <script rel="script/javascript" src="assets/js/main.js"></script>
+    <!--endbuild-->
+    <footer>
+      <div class="custom-container">
+        <div class="footer-content">
+          <div class="row justify-content-md-between">
+            <div class="col-md-4 col-lg-4"><a class="logo" href="index.html"><img src="assets/images/logo.png" alt="Logo"/></a>
+              <p class="intro">Bí quyết và tâm huyết chắt chiu hơn 20 năm kinh nghiệm bậc thầy tạo nên vị ngon đặc trưng khó cưỡng, khiến mỗi chiếc bánh là một công trình ẩm thực kỳ công và đẳng cấp.</p>
+              <div class="typo-group">
+                <h5>Thời gian mở cửa:</h5>
+                <p>Thứ 2 - Thứ 6: 8h30 - 18h00</p>
+                <p>Thứ 7 - Chủ Nhật: 9h00 - 16h00</p>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-2">
+              <h5 class="footer-title">Liên kết nhanh</h5>
+              <ul class="quick-links">
+                <li><a href="about.html">Về chúng tôi</a></li>
+                <li><a href="news.html">Tin tức</a></li>
+                <li><a href="moon-cake.htmk">Bánh trung thu 2019</a></li>
+                <li><a href="moon-cake_choose.html">Chọn vị bánh</a></li>
+                <li><a href="contact.html">Liên hệ đặt bánh</a></li>
+                <li><a href="contact.html">Góp ý</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-4">
+              <h5 class="footer-title">Thông tin cửa hàng</h5>
+              <div class="typo-group">
+                <h5>Cơ sở 1:</h5>
+                <p>Điện thoại: 039 539 0668</p>
+                <p>Địa chỉ: Số 4, đường Nguyễn Chí Thanh, Đống Đa</p>
+              </div>
+              <div class="typo-group">
+                <h5>Cơ sở 1:</h5>
+                <p>Điện thoại: 039 539 0668</p>
+                <p>Địa chỉ: Số 45, ngõ 121, Láng Hạ, Đống Đa</p>
+              </div>
+              <div class="typo-group">
+                <h5>Cơ sở 1:</h5>
+                <p>Điện thoại: 039 539 0668</p>
+                <p>Địa chỉ: Tầng 2, TTTM Aeon Mall Long Biên, Long Biên</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

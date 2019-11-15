@@ -283,7 +283,7 @@
 }
 
 .call-to-action {
-	@include media-breakpoint-down(sm) {
+	@include tablet {
 		display: none;
 	}
 }

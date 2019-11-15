@@ -1,0 +1,19 @@
+.page-header {
+	background: {
+		image: url('../images/page-header-bg.png');
+		size: cover;
+		position: center;
+	}
+	padding: remCal(100) 0;
+	margin-bottom: remCal(100);
+	.page-header_content {
+		text-align: center;
+		position: unset;
+		z-index: 2;
+		h2 {
+			@include typo($color: white, $fsz: 60, $cpt: true);
+			font-family: SVN;
+			margin-bottom: remCal(30);
+		}
+	}
+}

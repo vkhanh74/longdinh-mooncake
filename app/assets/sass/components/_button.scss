@@ -12,6 +12,7 @@
 	padding: remCal(13) remCal(35);
 	text-decoration: none;
 	line-height: 1;
+	text-align: center;
 	@include prefix(border-radius, 999px);
 	@include prefix(transition, $transition);
 	&:focus {

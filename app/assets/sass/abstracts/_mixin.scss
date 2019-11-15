@@ -1,9 +1,5 @@
-@import "node_modules/bootstrap/scss/functions";
-@import "node_modules/bootstrap/scss/variables";
-@import "node_modules/bootstrap/scss/mixins";
-
 //*****************************
-//	Typography
+//	Typography 
 //*****************************
 
 // $up: Uppercase;
@@ -115,6 +111,7 @@
 	padding: $pd;
 	text-decoration: none;
 	z-index: 1;
+	text-align: center;
 	@include typo($color: $color, $fsz: $fsz, $fw: 700, $lh: 0);
 	@include prefix(border-radius, $btn-rd);
 	@include prefix(transition, $transition)
@@ -190,11 +187,11 @@
 
 
 //Select
-@mixin select($pd-hoz: 15, $width: 100%,$brd: 0px,$height: auto,$default:true) {
-	background-color: setColor(white);
-	border: 1px solid setColor(black);
+@mixin select($pd-hoz: 15, $width: 100%,$brd: 999px,$height: auto,$default:true) {
+	background-color: setColor(trans);
+	border: 1px solid setColor(base);
 	height: remCal($height);
-	width: $width;
+	width: remCal($width);
 	transition: $transition;
 	padding: {
 		right: remCal($pd-hoz);
@@ -207,7 +204,7 @@
 	@if $default == false {
 		-webkit-appearance: none;
 	}
-	@include typo($lh: $height);
+	@include typo($lh: $height, $fsz: 16);
 	@include prefix(border-radius, $brd);
 
 }

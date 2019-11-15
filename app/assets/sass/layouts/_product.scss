@@ -14,10 +14,11 @@
 		position: relative;
 		margin-bottom: remCal(20);
 		overflow: hidden;
+		height: remCal(280);
 		img {
-			max-height: remCal(360);
+			height: 100%;
 			width: 100%;
-			object-fit: cover;
+			object-fit: contain;
 			transition: $transition;
 		}
 		.btn-cart-add {
@@ -31,14 +32,14 @@
 			font-size: remCal(16);
 			font-family: cambria-bold;
 			text-decoration: none;
-			padding: remCal(20) 0;
+			padding: remCal(16) 0;
 			transition: 0.4s;
 		}
 	}
 	.prodcut-content {
 		text-align: center;
 		.prodcut-content--name {
-			@include link(setSchemaColor(gray, dark), base, $fsz: 18, $fw: 700, $lh: 1);
+			@include link(setSchemaColor(gray, dark), base, $fsz: 18, $fw: 700, $lh: 1, $cpt: true);
 			@include text-limit(1,remCal(18));
 			display: block;
 			margin-bottom: remCal(15);
@@ -60,6 +61,11 @@
 			.btn-cart-add {
 				bottom: 0;
 			}
+		}
+	}
+	@include mobile {
+		.product-image {
+			height: auto;
 		}
 	}
 }

@@ -1,0 +1,157 @@
+extends base/layout.pug
+
+block title
+	- var crtPage = 3;
+	title Bánh trung thu 2019
+block content
+	.page-header
+		.custom-container
+			.page-header_content
+				h2 Bánh trung thu 2020
+				.breadcrumb
+					a.prvPage(href="index.html") Trang chủ
+					a.crtPage(href="#") Bánh trung thu 2020
+	.shop
+		.custom-container
+			.row
+				.col-lg-3
+					form#sidebar-filter(action="")
+						.sidebar-header
+							a#redo-filter(href="#")
+								i.fal.fa-undo
+								|Làm lại
+							a#reset-filter(href="#")
+								i.fal.fa-trash
+								|Bỏ lọc
+						.sidebar-section
+							.sidebar-section_header
+								h5.sidebar-section--title Loại bánh
+								span
+									i.fal.fa-chevron-down
+							.radio-wrapper
+								.radio-group
+									input#box(type="radio" name="wrapper" value="box")
+									label(for="box") Bánh theo hộp
+								.radio-group
+									input#piece(type="radio" name="wrapper" value="piece")
+									label(for="piece") Bánh đơn
+						.sidebar-section
+							.sidebar-section_header
+								h5.sidebar-section--title Vỏ bánh
+								span
+									i.fal.fa-chevron-down
+							.radio-wrapper
+								.radio-group
+									input#roasted(type="radio" name="crust" value="roasted")
+									label(for="roasted") Bánh nướng
+								.radio-group
+									input#limber(type="radio" name="crust" value="limber")
+									label(for="limber") Bánh dẻo
+						.sidebar-section
+							.sidebar-section_header
+								h5.sidebar-section--title Dòng bánh
+								span
+									i.fal.fa-chevron-down
+							.radio-wrapper
+								.radio-group
+									input#gift(type="radio" name="type" value="gift")
+									label(for="gift") Biếu tặng
+								.radio-group
+									input#family(type="radio" name="type" value="family")
+									label(for="family") Gia đình
+								.radio-group
+									input#big(type="radio" name="type" value="big")
+									label(for="big") Bánh lớn
+								.radio-group
+									input#small(type="radio" name="type" value="small")
+									label(for="small") Bánh nhỏ
+								.radio-group
+									input#diet(type="radio" name="type" value="diet")
+									label(for="diet") Ăn chay, ăn kiêng
+								.radio-group
+									input#kid(type="radio" name="type" value="kid")
+									label(for="kid") Thiếu nhi
+						.sidebar-section
+							.sidebar-section_header
+								h5.sidebar-section--title Khoảng giá
+								span
+									i.fal.fa-chevron-down
+							.radio-wrapper
+								.radio-group
+									input#under500(type="radio" name="price-range" value="under500")
+									label(for="under500") Dưới 500,000
+								.radio-group
+									input#500to1000(type="radio" name="price-range" value="500to1000")
+									label(for="500to1000") Từ 500,000 đến 10000,000
+								.radio-group
+									input#1000to2000(type="radio" name="price-range" value="1000to2000")
+									label(for="1000to2000") Từ 1,000,000 đến 2,000,000
+								.radio-group
+									input#morethan2000(type="radio" name="price-range" value="morethan2000")
+									label(for="morethan2000") Trên 2,000,000
+						.sidebar-section
+							.sidebar-section_header
+								h5.sidebar-section--title Nâng cao
+								span
+									i.fal.fa-chevron-down
+							.radio-wrapper
+								.radio-group
+									input#discount(type="radio" name="advance" value="discount")
+									label(for="discount") Giảm giá
+								.radio-group
+									input#limited(type="radio" name="advance" value="limited")
+									label(for="limited") Số lượng có hạn
+						.sidebar-banner
+							a.banner-hover(href="blog-detail.html")
+								img(src="assets/images/shop-sidebar-banner.png", alt="Hình ảnh quảng cáo")
+						a#close-sidebar.btn.btn--base(href="") Đóng
+				.col-lg-9
+					.shop-header
+						.shop-header_banners
+							.row
+								.col-sm-6
+									a.banner-hover(href="blog-detail.html")
+										img(src="assets/images/shop-banner.png", alt="Ảnh quảng cáo sản phẩm")
+								.col-sm-6
+									a.banner-hover(href="blog-detail.html")
+										img(src="assets/images/shop-banner2.png", alt="Ảnh quảng cáo sản phẩm")
+						.shop-header_filter
+							a#open-sidebar(href="#") 
+								i.fal.fa-filter
+								|Lọc sản phẩm
+							.sort-select
+								p Sắp xếp theo:
+								select#productSort(name="product-sort")
+									option(value="default" selected) Mặc định
+									option(value="az") A đến Z
+									option(value="za") Z đến A
+									option(value="lowHigh") Giá từ thấp đến cao
+									option(value="highLow") Giá từ cao đến thấp
+					.shop-product_group
+						.row
+							each product in products.filter((product) => product.type == 'box').slice(0,9)
+								.col-sm-6.col-md-4
+									.product
+										.product-image
+											img(src=product.image)
+											a.btn-cart-add(href="#") Thêm vào giỏ hàng
+										.prodcut-content
+											a.prodcut-content--name(href="shop-detail.html")= product.name
+											.product-content_price
+												h5= product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+													if product.discount
+														span= product.discount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+					.pagination
+						ul
+							li.active
+								a(href="#") 1
+							li
+								a(href="#") 2
+							li
+								a(href="#") 3
+							li
+								span . . .
+							li
+								a(href="#") 7
+							li
+								a(href="#") 8

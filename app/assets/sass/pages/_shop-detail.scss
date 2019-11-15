@@ -1,0 +1,68 @@
+.shop-detail {
+	margin-top: remCal(100);
+	margin-bottom: remCal(100);
+	.shop-detail_product {
+		display: flex;
+		.shop-detail_product__left {
+			flex: 1 1 remCaL(400);
+			max-width: remCaL(400);
+			
+			.backdrop {
+				height: remCal(400);
+				width: remCal(400);
+				background: linear-gradient(180deg, #FACF5A 0%, #FFBA00 100%);
+				border-radius: 999px;
+			}
+			.product-image {
+				position: relative;
+				#parallax-wrapper {
+					img {
+						position:absolute;
+						bottom: 0;
+						right: 0;
+						max-width: 85%;
+					}
+				}
+			}
+		}
+		.shop-detail_product__right {
+			flex: 1;
+			padding-left: remCal(100);
+			.shop-detail_product__right_content {
+				.product-category {
+					margin-bottom: remCal(10);
+					@include typo($fsz:18,$up:true,$color: setSchemaColor(gray), $fw: 700);
+				}
+				.product-name {
+					margin-bottom: remCal(35);
+					@include typo($fsz:35, $color: setSchemaColor(gray, dark));
+					font-family: SVN;
+				}
+				.product-price {
+					margin-bottom: remCal(30);
+					@include typo($fsz:18, $color: setSchemaColor(gray, dark), $fw: 700);
+					span {
+						font-size: remCal(26);
+						color: setColor(base);
+					}
+				}
+				.product-information {
+					margin-bottom: remCal(40);
+					h5 {
+						margin-bottom: remCal(10);
+						@include typo($color: setSchemaColor(gray, dark), $fw: 700);
+					}
+					p {
+						margin-bottom: remCal(5);
+						@include typo($color: setSchemaColor(gray));
+
+					}
+				}
+				.btn {
+					padding-left: remCal(70);
+					padding-right: remCal(70);
+				}
+			}
+		}
+	}
+}

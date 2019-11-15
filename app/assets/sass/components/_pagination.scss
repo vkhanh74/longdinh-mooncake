@@ -1,0 +1,34 @@
+.pagination {
+	ul {
+		display: flex;
+		justify-content: center;
+		align-items: baseline;
+		li {
+			margin-left: remCal(5);
+			margin-right: remCal(5);
+			@include trim-margin();
+			&.active {
+				a {
+					background-color: setColor(base);
+					color: setColor(white);
+				}		
+			}
+			a {
+				@include button($pd: 0,
+						$bg-color: trans,
+						$hvr-color: white,
+						$color: base,
+						$hvr-bg-color: base,
+						$border-color: trans,
+						$hvr-border-color: base,
+						$fsz: 16,
+						$btn-rd: 999px,
+						$border-thick: 2) 
+				height: remCal(40);
+				width: remCal(40);
+				line-height: remCal(40);
+
+			}
+		}
+	}
+}

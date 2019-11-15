@@ -1,0 +1,52 @@
+.radio-group {
+	position: relative;
+	margin-bottom: remCal(6);
+	&:hover {
+		label {
+			&:after {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+	input[type='radio'] {
+		position: absolute;
+   		left: -9999px;
+   		opacity: 0;
+	}
+	label {
+		padding-left: remCal(25);
+		cursor: pointer;
+		@include typo($fsz:16,$lh:32,$color: setSchemaColor(gray));
+		&:before {
+			content: '';
+			height: remCal(15);
+			width: remCal(15);
+			border-radius: 999px;
+			border: 1px solid setColor(base);
+			position: absolute;
+			top: remCal(8);
+			left: 0;
+		}
+		&:after {
+			content: '\f00c';
+		    font-family: "Font Awesome 5 Pro";
+		    font-size: remCal(15);
+		    font-weight: 600;
+		    color: setColor(base);
+			position: absolute;
+			top: 0;
+			left: 2px;
+			opacity: 0;
+			transition: $transition;
+			transform: scale(0);
+		}
+	}
+	input[type='radio']:checked ~ label:after {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
