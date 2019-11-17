@@ -116,6 +116,20 @@
 			.open-nav {
 				display: none;
 			}
+			.view-cart {
+				position: relative;
+				span {
+					position: absolute;
+					top: 0;
+					right: remCal(-8);
+					background-color: setColor(white);
+					height: remCal(15);
+					width: remCal(15);
+					border-radius: 999px;
+					@include typo($fsz: 12, $lh:15, $color: setSchemaColor(gray,dark));
+					text-align: center;
+				}
+			}
 		}	
 	}
 }

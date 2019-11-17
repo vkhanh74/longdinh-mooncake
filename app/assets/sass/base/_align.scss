@@ -1,7 +1,3 @@
-.item-center {
-	text-align: center;
-}
-
 @each $name, $value in $align {
 	.item-#{$name} {
 		text-align: $value;

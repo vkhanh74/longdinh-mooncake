@@ -3,6 +3,8 @@
 	margin-bottom: remCal(100);
 	.shop-detail_product {
 		display: flex;
+		align-items: center;
+		margin-bottom: remCal(100);
 		.shop-detail_product__left {
 			flex: 1 1 remCaL(400);
 			max-width: remCaL(400);
@@ -41,27 +43,72 @@
 				.product-price {
 					margin-bottom: remCal(30);
 					@include typo($fsz:18, $color: setSchemaColor(gray, dark), $fw: 700);
-					span {
+					.final-price {
 						font-size: remCal(26);
 						color: setColor(base);
+						margin-right: remCal(15);
+					}
+					.discount-price {
+						font-size: remCal(20);
+						color: setSchemaColor(gray,light);
+						text-decoration: line-through;
 					}
 				}
 				.product-information {
 					margin-bottom: remCal(40);
 					h5 {
 						margin-bottom: remCal(10);
-						@include typo($color: setSchemaColor(gray, dark), $fw: 700);
+						@include typo($color: setSchemaColor(gray, dark), $fw: 700, $fsz: 18);
 					}
-					p {
-						margin-bottom: remCal(5);
-						@include typo($color: setSchemaColor(gray));
+					ul {
+						li {
+							margin-bottom: remCal(8);
+						    list-style-type: disc;
+    						list-style-position: inside;
+							@include typo($color: setSchemaColor(gray),$fsz: 18);
+							a {
+								font-size: remCal(18);
+								margin-left: remCal(5);
+							}
 
+						}
 					}
+					
 				}
 				.btn {
 					padding-left: remCal(70);
 					padding-right: remCal(70);
 				}
+			}
+		}
+	}
+	.recommended-products {
+		.recommended-products_wrapper {
+			margin: 0 -15px;
+			.product {
+				padding: 0 15px;
+			}
+		}
+	}
+	@include desktop {
+		.shop-detail_product {
+			.shop-detail_product__right {
+				padding-left: remCal(60);
+			}
+		}
+	}
+	@include tablet {
+		.shop-detail_product {
+			flex-direction: column;
+			.shop-detail_product__left {
+				flex: 1 1 100%;
+				max-width: 100%;
+				margin-bottom: remCal(50);
+			}
+			.shop-detail_product__right {
+				padding-left: 0;
+				flex: 1 1 100%;
+				max-width: 100%;
 			}
 		}
 	}

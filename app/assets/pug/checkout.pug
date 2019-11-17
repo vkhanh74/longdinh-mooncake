@@ -1,0 +1,16 @@
+extends base/layout.pug
+
+block title
+	- var crtPage = 3;
+	title Thanh toán
+block content
+	.page-header
+		.custom-container
+			.page-header_content
+				h2 Thanh toán
+				.breadcrumb
+					a.prvPage(href="index.html") Trang chủ
+					a.prvPage(href="cart.html") Giỏ hàng
+					a.crtPage(href="#") Thanh toán
+	.checkout
+		.custom-container

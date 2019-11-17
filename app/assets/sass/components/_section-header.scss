@@ -9,4 +9,9 @@
 	p {
 		@include typo($color: getColor(#5C4826), $fsz: 24, $fw: 700, $lh: 1);
 	}
+	&.only-title {
+		h3 {
+			margin-bottom: 0;
+		}
+	}
 }

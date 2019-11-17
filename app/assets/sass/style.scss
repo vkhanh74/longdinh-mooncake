@@ -14,6 +14,7 @@
 @import "components/breadcrumb";
 @import "components/radio-button";
 @import "components/pagination";
+@import "components/quantity-control";
 
 @import "layouts/header";
 @import "layouts/product";
@@ -24,8 +25,10 @@
 @import "layouts/page-header";
 @import "layouts/content";
 @import "layouts/filter-sidebar";
+@import "layouts/success-popup";
 
 @import "pages/index";
 @import "pages/about";
 @import "pages/shop";
 @import "pages/shop-detail";
+@import "pages/cart";

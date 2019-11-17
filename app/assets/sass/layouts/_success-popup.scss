@@ -1,0 +1,61 @@
+$circle-length: 300px;
+$check-length: 35px;
+.success-popup {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    z-index: 6;
+    padding: remCal(30);
+    border-radius: remCal(5);
+    box-shadow: remCal(5) remCal(5) remCal(20) remCal(3) #00000042;
+    text-align: center;
+    #successAnimationCircle {
+        stroke-dasharray: $circle-length $circle-length;
+        stroke: #005596;
+    }
+
+    #successAnimationCheck {
+        stroke-dasharray: $check-length $check-length;
+        stroke: #005596;
+    }
+
+    #successAnimation.animated {
+        margin-bottom: remCal(20);
+        animation: 1s ease-out 0s 1 both scaleAnimation;
+
+        #successAnimationCircle {
+          animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCircle;
+      }
+
+      #successAnimationCheck {
+          animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCheck;
+      }
+    }
+
+    #animate {
+        background: rgba(255,255,255,0.2);
+        cursor: pointer;
+        border: 0;
+        border-radius: 3px;
+        bottom: 100px;
+        color: #005596;
+        left: 50%;
+        outline: 0;
+        padding: 10px 30px;
+        position: absolute;
+        transform: translateX(-50%);
+        &:active {
+            background: rgba(255,255,255,0.1);
+        }
+    }
+    h5 {
+        @include typo($fsz:18,$lh:0,$fw:700,$color:base);
+    }
+}
+
+

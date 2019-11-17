@@ -13,11 +13,6 @@
     <!--endbuild-->
   </head>
   <body>
-    <div id="loader">
-      <div class="loader-content"><img id="loader-logo" src="assets/images/logo.png" alt="Logo"/>
-        <h1 id="loader-title">Bánh trung thu Long Đình</h1>
-      </div>
-    </div>
     <div id="search">
       <div class="overlay"></div><a id="close-search" href="#"><i class="fal fa-times"></i></a>
       <div class="search-content">
@@ -41,17 +36,18 @@
               <li><a class="nav-link" href="index.html">Trang chủ</a></li>
               <li><a class="nav-link" href="about.html">Về chúng tôi</a></li>
               <li><a class="active nav-link" href="mooncake-2020.html">Bánh trung thu 2020</a></li>
-              <li><a class="nav-link" href="news.html">Tin tức</a></li>
+              <li><a class="nav-link" href="blog.html">Tin tức</a></li>
               <li><a class="btn nav-link" href="contact.html">Liên hệ đặt bánh</a></li>
             </ul>
           </nav>
-          <div class="nav-function"><a id="open-search" href="#"><i class="fal fa-search"></i></a><a href="#"><i class="fal fa-shopping-bag"></i></a><a class="open-nav" href="#"><i class="fal fa-bars"></i></a></div>
+          <div class="nav-function"><a id="open-search" href="#"><i class="fal fa-search"></i></a><a class="view-cart" href="cart.html"><i class="fal fa-shopping-bag"></i><span>3</span></a><a class="open-nav" href=""><i class="fal fa-bars"></i></a></div>
         </div>
       </div>
     </div>
     <div class="content">
       <div class="shop-detail">
         <div class="custom-container">
+          <div class="breadcrumb breadcrumb--dark"><a class="prvPage" href="index.html">Trang chủ</a><a class="prvPage" href="shop.html">Bánh trung thu 2020</a><a class="crtPage" href="#">Trăng Vàng Hồng Ngọc An Nhiên (Tím)</a></div>
           <div class="shop-detail_product">
             <div class="shop-detail_product__left">
               <div class="backdrop"></div>
@@ -63,26 +59,83 @@
               <div class="shop-detail_product__right_content">
                 <h5 class="product-category">Dòng bánh trăng vàng</h5>
                 <h2 class="product-name">Trăng Vàng Hồng Ngọc An Nhiên (Tím)</h2>
-                <h3 class="product-price">Giá bán: <span>549.000 VND</span></h3>
+                <h3 class="product-price">Giá bán: <span class="final-price">1,000,000 VND</span><span class="discount-price">1,200,000</span></h3>
                 <div class="product-information">
                   <h5>Thông tin thêm:</h5>
-                  <p>● Hộp 4 bánh gồm: Cua Sốt Kiểu Singapore, Jambon Ngũ Hạt, Đậu Đỏ Hạnh Nhân, Hạt Sen Hạt Dưa.</p>
-                  <p>● (Vỏ nướng, 1 trứng, 160g)/mỗi bánh. </p>
-                  <p>● Sản phẩm chỉ bán theo hộp</p>
-                  <p>● Tặng ngay lồng đèn trung thu cao cấp khi mua bánh . Xem thêm</p>
+                  <ul>
+                    <li>Hộp 4 bánh gồm: Cua Sốt Kiểu Singapore, Jambon Ngũ Hạt, Đậu Đỏ Hạnh Nhân, Hạt Sen Hạt Dưa.</li>
+                    <li>(Vỏ nướng, 1 trứng, 160g)/mỗi bánh. </li>
+                    <li>Sản phẩm chỉ bán theo hộp</li>
+                    <li>Tặng ngay lồng đèn trung thu cao cấp khi mua bánh<a class="link-underline" href="blog-detail.html">Xem thêm</a></li>
+                  </ul>
                 </div><a class="btn btn--base-fill" href="#">Mua ngay</a>
+              </div>
+            </div>
+          </div>
+          <div class="recommended-products">
+            <div class="section-header only-title">
+              <h3>Gợi ý cho bạn</h3>
+            </div>
+            <div class="recommended-products_wrapper">
+              <div class="product">
+                <div class="product-image"><img src="assets/images/products/sp1.png"/><a class="btn-cart-add" href="#">Thêm vào giỏ hàng</a></div>
+                <div class="prodcut-content"><a class="prodcut-content--name" href="shop-detail.html">Trăng vàng hồng ngọc tâm an</a>
+                  <div class="product-content_price">
+                    <h5>800,000
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <div class="product">
+                <div class="product-image"><img src="assets/images/products/sp2.png"/><a class="btn-cart-add" href="#">Thêm vào giỏ hàng</a></div>
+                <div class="prodcut-content"><a class="prodcut-content--name" href="shop-detail.html">Trăng vàng hồng ngọc an bình</a>
+                  <div class="product-content_price">
+                    <h5>690,000<span>900,000</span>
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <div class="product">
+                <div class="product-image"><img src="assets/images/products/sp3.png"/><a class="btn-cart-add" href="#">Thêm vào giỏ hàng</a></div>
+                <div class="prodcut-content"><a class="prodcut-content--name" href="shop-detail.html">Trăng vàng hồng ngọc an nhiên (tím)</a>
+                  <div class="product-content_price">
+                    <h5>1,100,000<span>1,200,000</span>
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <div class="product">
+                <div class="product-image"><img src="assets/images/products/sp4.png"/><a class="btn-cart-add" href="#">Thêm vào giỏ hàng</a></div>
+                <div class="prodcut-content"><a class="prodcut-content--name" href="shop-detail.html">Trăng vàng pha lê toàn phúc (vàng)</a>
+                  <div class="product-content_price">
+                    <h5>700,000
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <div class="product">
+                <div class="product-image"><img src="assets/images/products/sp5.png"/><a class="btn-cart-add" href="#">Thêm vào giỏ hàng</a></div>
+                <div class="prodcut-content"><a class="prodcut-content--name" href="shop-detail.html">Trăng vàng pha lê vạn phúc (xanh)</a>
+                  <div class="product-content_price">
+                    <h5>1,200,000
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <div class="product">
+                <div class="product-image"><img src="assets/images/products/sp6.png"/><a class="btn-cart-add" href="#">Thêm vào giỏ hàng</a></div>
+                <div class="prodcut-content"><a class="prodcut-content--name" href="shop-detail.html">Trăng vàng kim cương trường khang</a>
+                  <div class="product-content_price">
+                    <h5>2,990,000
+                    </h5>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!--build:js assets/js/main.min.js-->
-    <script rel="script/javascript" src="assets/js/jquery.min.js"></script>
-    <script rel="script/javascript" src="assets/js/slick.min.js"></script>
-    <script rel="script/javascript" src="assets/js/TweenMax.min.js"></script>
-    <script rel="script/javascript" src="assets/js/main.js"></script>
-    <!--endbuild-->
     <footer>
       <div class="custom-container">
         <div class="footer-content">
@@ -99,9 +152,9 @@
               <h5 class="footer-title">Liên kết nhanh</h5>
               <ul class="quick-links">
                 <li><a href="about.html">Về chúng tôi</a></li>
-                <li><a href="news.html">Tin tức</a></li>
-                <li><a href="moon-cake.htmk">Bánh trung thu 2019</a></li>
-                <li><a href="moon-cake_choose.html">Chọn vị bánh</a></li>
+                <li><a href="blog.html">Tin tức</a></li>
+                <li><a href="mooncake-2020.htmk">Bánh trung thu 2019</a></li>
+                <li><a href="404.html">Chọn vị bánh</a></li>
                 <li><a href="contact.html">Liên hệ đặt bánh</a></li>
                 <li><a href="contact.html">Góp ý</a></li>
               </ul>
@@ -128,5 +181,11 @@
         </div>
       </div>
     </footer>
+    <!--build:js assets/js/main.min.js-->
+    <script rel="script/javascript" src="assets/js/jquery.min.js"></script>
+    <script rel="script/javascript" src="assets/js/slick.min.js"></script>
+    <script rel="script/javascript" src="assets/js/TweenMax.min.js"></script>
+    <script rel="script/javascript" src="assets/js/main.js"></script>
+    <!--endbuild-->
   </body>
 </html>

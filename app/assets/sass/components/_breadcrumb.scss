@@ -11,4 +11,13 @@
 			font-family: cambria-bold;
 		}
 	}
+	&.breadcrumb--dark {
+		margin-bottom: remCal(70);
+		a {
+			@include link(setSchemaColor(gray,dark), base, $fsz:18);
+			&.crtPage {
+				font-family: cambria-bold;
+			}
+		}
+	}
 }

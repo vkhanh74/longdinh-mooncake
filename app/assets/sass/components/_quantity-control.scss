@@ -1,0 +1,25 @@
+.quantity-control {
+	.control-btn {
+		@include button($pd: 0,
+			$bg-color: trans,
+			$hvr-color: white,
+			$color: base,
+			$hvr-bg-color: base,
+			$border-color: base,
+			$hvr-border-color: base,
+			$fsz: 16,
+			$btn-rd: 999px,
+			$border-thick: 1);
+		height: remCal(35);
+		width: remCal(35);
+		line-height: remCal(35);
+	}
+	input {
+		border: 0;
+		background-color: setColor(trans);
+		max-width: remCal(30);
+		text-align: center;
+		margin: 0 remCal(5);
+		font-family: cambria-bold;
+	}
+}

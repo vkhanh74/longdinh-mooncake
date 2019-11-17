@@ -6,6 +6,10 @@ block title
 block content
 	.shop-detail
 		.custom-container
+			.breadcrumb.breadcrumb--dark
+				a.prvPage(href="index.html") Trang chủ
+				a.prvPage(href="shop.html") Bánh trung thu 2020
+				a.crtPage(href="#") Trăng Vàng Hồng Ngọc An Nhiên (Tím)
 			.shop-detail_product
 				.shop-detail_product__left
 					.backdrop
@@ -17,12 +21,31 @@ block content
 						h5.product-category Dòng bánh trăng vàng
 						h2.product-name Trăng Vàng Hồng Ngọc An Nhiên (Tím)
 						h3.product-price Giá bán: 
-							span 549.000 VND
+							span.final-price 1,000,000 VND
+							span.discount-price 1,200,000
 						.product-information
 							h5 Thông tin thêm:
-							p ● Hộp 4 bánh gồm: Cua Sốt Kiểu Singapore, Jambon Ngũ Hạt, Đậu Đỏ Hạnh Nhân, Hạt Sen Hạt Dưa.
-							p ● (Vỏ nướng, 1 trứng, 160g)/mỗi bánh. 
-							p ● Sản phẩm chỉ bán theo hộp
-							p ● Tặng ngay lồng đèn trung thu cao cấp khi mua bánh . Xem thêm
+							ul
+								li Hộp 4 bánh gồm: Cua Sốt Kiểu Singapore, Jambon Ngũ Hạt, Đậu Đỏ Hạnh Nhân, Hạt Sen Hạt Dưa.
+								li (Vỏ nướng, 1 trứng, 160g)/mỗi bánh. 
+								li Sản phẩm chỉ bán theo hộp
+								li Tặng ngay lồng đèn trung thu cao cấp khi mua bánh
+									a.link-underline(href="blog-detail.html") Xem thêm
 						a.btn.btn--base-fill(href="#") Mua ngay
+			.recommended-products
+				.section-header.only-title
+					h3 Gợi ý cho bạn
+				.recommended-products_wrapper
+					each product in products.filter((product) => product.type == 'box').slice(0,6)
+						.product
+							.product-image
+								img(src=product.image)
+								a.btn-cart-add(href="#") Thêm vào giỏ hàng
+							.prodcut-content
+								a.prodcut-content--name(href="shop-detail.html")= product.name
+								.product-content_price
+									h5= product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+										if product.discount
+											span= product.discount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+
 		

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Giỏ hàng</title>
+    <!--build:css assets/css/styles.min.css-->
+    <link rel="stylesheet" href="assets/css/custom_bootstrap.css"/>
+    <link rel="stylesheet" href="assets/css/slick.min.css"/>
+    <link rel="stylesheet" href="assets/css/all.min.css"/>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+    <!--endbuild-->
+  </head>
+  <body>
+    <div id="search">
+      <div class="overlay"></div><a id="close-search" href="#"><i class="fal fa-times"></i></a>
+      <div class="search-content">
+        <div class="custom-container">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <form action="about.html">
+                <input type="text" name="search" placeholder="Tìm kiếm dòng bánh, vị bánh trung thu"/>
+                <button><i class="fal fa-paper-plane"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header">
+      <div class="custom-container">
+        <div class="header-content"><a class="logo" href="index.html"><img src="assets/images/logo.png" alt="Logo"/></a>
+          <nav>
+            <ul>
+              <li><a class="nav-link" href="index.html">Trang chủ</a></li>
+              <li><a class="nav-link" href="about.html">Về chúng tôi</a></li>
+              <li><a class="active nav-link" href="mooncake-2020.html">Bánh trung thu 2020</a></li>
+              <li><a class="nav-link" href="blog.html">Tin tức</a></li>
+              <li><a class="btn nav-link" href="contact.html">Liên hệ đặt bánh</a></li>
+            </ul>
+          </nav>
+          <div class="nav-function"><a id="open-search" href="#"><i class="fal fa-search"></i></a><a class="view-cart" href="cart.html"><i class="fal fa-shopping-bag"></i><span>3</span></a><a class="open-nav" href=""><i class="fal fa-bars"></i></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="page-header">
+        <div class="custom-container">
+          <div class="page-header_content">
+            <h2>Giỏ hàng</h2>
+            <div class="breadcrumb"><a class="prvPage" href="index.html">Trang chủ</a><a class="crtPage" href="#">Giỏ hàng</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="cart">
+        <div class="custom-container">
+          <div class="table-wrapper">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Xóa</th>
+                  <th> </th>
+                  <th>Tên sản phẩm</th>
+                  <th>Giá</th>
+                  <th>Số lượng</th>
+                  <th>Thành tiền</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="product-remove"><a href="#"><i class="fal fa-trash-alt"></i></a></td>
+                  <td class="product-image"><img src="assets/images/products/sp4.png" alt="Hình ảnh sản phẩm"/></td>
+                  <td class="product-name"><span>Trăng vàng pha lê toàn phúc (vàng)</span></td>
+                  <td class="product-price"><span>700,000</span></td>
+                  <td class="product-quantity">
+                    <div class="quantity-control"><a class="control-btn minus" href="#">-</a>
+                      <input class="quantity" type="text" value="1" readonly="readonly"/><a class="control-btn plus" href="#">+</a>
+                    </div>
+                  </td>
+                  <td class="product-total"><span>700,000</span></td>
+                </tr>
+                <tr>
+                  <td class="product-remove"><a href="#"><i class="fal fa-trash-alt"></i></a></td>
+                  <td class="product-image"><img src="assets/images/products/sp5.png" alt="Hình ảnh sản phẩm"/></td>
+                  <td class="product-name"><span>Trăng vàng pha lê vạn phúc (xanh)</span></td>
+                  <td class="product-price"><span>1,200,000</span></td>
+                  <td class="product-quantity">
+                    <div class="quantity-control"><a class="control-btn minus" href="#">-</a>
+                      <input class="quantity" type="text" value="1" readonly="readonly"/><a class="control-btn plus" href="#">+</a>
+                    </div>
+                  </td>
+                  <td class="product-total"><span>1,200,000</span></td>
+                </tr>
+                <tr>
+                  <td class="product-remove"><a href="#"><i class="fal fa-trash-alt"></i></a></td>
+                  <td class="product-image"><img src="assets/images/products/sp6.png" alt="Hình ảnh sản phẩm"/></td>
+                  <td class="product-name"><span>Trăng vàng kim cương trường khang</span></td>
+                  <td class="product-price"><span>2,990,000</span></td>
+                  <td class="product-quantity">
+                    <div class="quantity-control"><a class="control-btn minus" href="#">-</a>
+                      <input class="quantity" type="text" value="1" readonly="readonly"/><a class="control-btn plus" href="#">+</a>
+                    </div>
+                  </td>
+                  <td class="product-total"><span>2,990,000</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="cart-footer">
+            <div class="cart-footer_left"><a class="btn btn--base" href="mooncake-2020.html"><i class="fal fa-chevron-left"></i>Khám phá thêm sản phẩm khác</a></div>
+            <div class="cart-footer_right">
+              <div class="cart-total_box">
+                <div class="cart-total_box__heading">
+                  <h5>Thành tiền</h5>
+                </div>
+                <div class="cart-total_box__content">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td class="product-name">Trăng vàng pha lê toàn phúc (vàng)<span>x1</span></td>
+                        <td class="product-price"><span>700,000</span></td>
+                      </tr>
+                      <tr>
+                        <td class="product-name">Trăng vàng pha lê vạn phúc (xanh)<span>x1</span></td>
+                        <td class="product-price"><span>1,200,000</span></td>
+                      </tr>
+                      <tr>
+                        <td class="product-name">Trăng vàng kim cương trường khang<span>x1</span></td>
+                        <td class="product-price"><span>2,990,000</span></td>
+                      </tr>
+                      <tr class="ship-fee">
+                        <td><span>Phí vận chuyển</span></td>
+                        <td><span>Miễn phí</span></td>
+                      </tr>
+                      <tr class="total">
+                        <td><span>Tổng cộng</span></td>
+                        <td><span>4,890,000</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div><a class="btn btn--base-fill" href="checkout.html">Tiến hành thanh toán</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="custom-container">
+        <div class="footer-content">
+          <div class="row justify-content-md-between">
+            <div class="col-md-4 col-lg-4"><a class="logo" href="index.html"><img src="assets/images/logo.png" alt="Logo"/></a>
+              <p class="intro">Bí quyết và tâm huyết chắt chiu hơn 20 năm kinh nghiệm bậc thầy tạo nên vị ngon đặc trưng khó cưỡng, khiến mỗi chiếc bánh là một công trình ẩm thực kỳ công và đẳng cấp.</p>
+              <div class="typo-group">
+                <h5>Thời gian mở cửa:</h5>
+                <p>Thứ 2 - Thứ 6: 8h30 - 18h00</p>
+                <p>Thứ 7 - Chủ Nhật: 9h00 - 16h00</p>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-2">
+              <h5 class="footer-title">Liên kết nhanh</h5>
+              <ul class="quick-links">
+                <li><a href="about.html">Về chúng tôi</a></li>
+                <li><a href="blog.html">Tin tức</a></li>
+                <li><a href="mooncake-2020.htmk">Bánh trung thu 2019</a></li>
+                <li><a href="404.html">Chọn vị bánh</a></li>
+                <li><a href="contact.html">Liên hệ đặt bánh</a></li>
+                <li><a href="contact.html">Góp ý</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-4">
+              <h5 class="footer-title">Thông tin cửa hàng</h5>
+              <div class="typo-group">
+                <h5>Cơ sở 1:</h5>
+                <p>Điện thoại: 039 539 0668</p>
+                <p>Địa chỉ: Số 4, đường Nguyễn Chí Thanh, Đống Đa</p>
+              </div>
+              <div class="typo-group">
+                <h5>Cơ sở 1:</h5>
+                <p>Điện thoại: 039 539 0668</p>
+                <p>Địa chỉ: Số 45, ngõ 121, Láng Hạ, Đống Đa</p>
+              </div>
+              <div class="typo-group">
+                <h5>Cơ sở 1:</h5>
+                <p>Điện thoại: 039 539 0668</p>
+                <p>Địa chỉ: Tầng 2, TTTM Aeon Mall Long Biên, Long Biên</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--build:js assets/js/main.min.js-->
+    <script rel="script/javascript" src="assets/js/jquery.min.js"></script>
+    <script rel="script/javascript" src="assets/js/slick.min.js"></script>
+    <script rel="script/javascript" src="assets/js/TweenMax.min.js"></script>
+    <script rel="script/javascript" src="assets/js/main.js"></script>
+    <!--endbuild-->
+  </body>
+</html>

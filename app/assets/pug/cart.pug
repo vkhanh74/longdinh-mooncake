@@ -1,0 +1,73 @@
+extends base/layout.pug
+
+block title
+	- var crtPage = 3;
+	title Giỏ hàng
+block content
+	.page-header
+		.custom-container
+			.page-header_content
+				h2 Giỏ hàng
+				.breadcrumb
+					a.prvPage(href="index.html") Trang chủ
+					a.crtPage(href="#") Giỏ hàng
+	.cart
+		.custom-container
+			.table-wrapper
+				table.table
+					thead
+						tr
+							th Xóa
+							th 
+							th Tên sản phẩm
+							th Giá
+							th Số lượng
+							th Thành tiền
+					tbody
+						each product in products.filter((product) => product.type == 'box').slice(3,6)
+							tr
+								td.product-remove
+									a(href="#")
+										i.fal.fa-trash-alt
+								td.product-image
+									img(src= product.image, alt="Hình ảnh sản phẩm")
+								td.product-name
+									span= product.name
+								td.product-price
+									span= product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+								td.product-quantity
+									.quantity-control
+										a(href="#").control-btn.minus -
+										input.quantity(type="text" value="1" readonly="readonly")
+										a(href="#").control-btn.plus +
+								td.product-total
+									span= product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+			.cart-footer
+				.cart-footer_left
+					a.btn.btn--base(href="mooncake-2020.html")
+						i.fal.fa-chevron-left
+						| Khám phá thêm sản phẩm khác
+				.cart-footer_right
+					.cart-total_box
+						.cart-total_box__heading
+							h5 Thành tiền
+						.cart-total_box__content
+							table
+								tbody
+									each product in products.filter((product) => product.type == 'box').slice(3,6)
+										tr
+											td.product-name= product.name
+												span x1
+											td.product-price
+												span= product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+									tr.ship-fee
+										td
+											span Phí vận chuyển
+										td
+											span Miễn phí
+									tr.total
+										td
+											span Tổng cộng
+										td
+											span 4,890,000
+						a.btn.btn--base-fill(href="checkout.html") Tiến hành thanh toán

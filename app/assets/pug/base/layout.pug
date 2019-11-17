@@ -10,11 +10,11 @@ html(lang="en")
 		include link.pug
 	body
 		include variable.pug
-		include loader.pug
+		//- include loader.pug
 		include search.pug
 		include header.pug
 		div(class= isPadding ? 'content' : 'content noPadding')
 			block content
 				h1 Happing coding
-		include script.pug
 		include footer.pug
+		include script.pug

@@ -1,5 +1,30 @@
 'use strict'
 
+//Product data
+function product(id, image ,name, price, discount, type) {
+  	this.id = id;
+  	this.image = image;
+  	this.name = name;
+  	this.price = price;
+  	this.discount = discount;
+  	this.type = type;
+  	this.printTotalPrice = (quantity) => {
+  		return (this.price * quantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  	}
+}
+
+const products = [
+	new product(1,'assets/images/products/sp1.png','Trăng vàng hồng ngọc tâm an', 800000, false, 'box'),
+	new product(2,'assets/images/products/sp2.png','Trăng vàng hồng ngọc an bình', 690000, 900000, 'box'),
+	new product(3,'assets/images/products/sp3.png','Trăng vàng hồng ngọc an nhiên (tím)', 1100000, 1200000, 'box'),
+	new product(4,'assets/images/products/sp4.png','Trăng vàng pha lê toàn phúc (vàng)', 700000, false, 'box'),
+	new product(5,'assets/images/products/sp5.png','Trăng vàng pha lê vạn phúc (xanh)', 1200000, false, 'box'),
+	new product(6,'assets/images/products/sp6.png','Trăng vàng kim cương trường khang', 2990000, false, 'box'),
+	new product(7,'assets/images/products/sp7.png','Trăng vàng hồng ngọc an phú (vàng)', 950000, 1000000, 'box'),
+	new product(8,'assets/images/products/sp8.png','Trăng vàng hồng ngọc an thịnh (đỏ)', 890000, false, 'box'),
+	new product(9,'assets/images/products/sp9.png','Trăng vàng hoàng kim vinh hoa (vàng)', 2190000, false, 'box'),
+]
+
 //Handle sliders
 function slickHandle() {
 	//Index
@@ -62,6 +87,35 @@ function slickHandle() {
 	//About
 	$('.our-success_group').slick({
 		slidesToShow: 3,
+		slidesToScroll: 1,
+		infinite: false,
+		prevArrow: '<button type="button" class="arrow prev-arrow"><i class="fal fa-chevron-left"></i></button>',
+		nextArrow: '<button type="button" class="arrow next-arrow"><i class="fal fa-chevron-right"></i></button>',
+		responsive: [
+		    {
+		      breakpoint: 996,
+		      settings: {
+		        slidesToShow: 2,
+		      }
+		    },
+		    {
+		      breakpoint: 768,
+		      settings: {
+		        slidesToShow: 2,
+		      }
+		    },
+		    {
+		      breakpoint: 576,
+		      settings: {
+		        slidesToShow: 1,
+		      }
+		    }
+	  	]
+	})
+
+	//Shop detail
+	$('.recommended-products_wrapper').slick({
+		slidesToShow: 4,
 		slidesToScroll: 1,
 		infinite: false,
 		prevArrow: '<button type="button" class="arrow prev-arrow"><i class="fal fa-chevron-left"></i></button>',
@@ -257,6 +311,7 @@ function sidebarHandle() {
 	$(window).on('resize', sidebarResize)
 }
 
+//Product detail image parallax 
 function imageParallax() {
 	$('html').mousemove(function(e){
 		var wx = $(window).width();
@@ -276,6 +331,87 @@ function imageParallax() {
 	});
 }
 
+//Product add to cart success popup
+function successPopUp() {
+	$('.btn-cart-add').on('click', function(e){
+		e.preventDefault()
+		//Check if class success-popuip is exist
+		if($('.success-popup').length === 0) {
+			$('body').prepend('<div class="success-popup"><svg class="animated" id="successAnimation" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewbox="0 0 70 70"><circle id="successAnimationCircle" cx="35" cy="35" r="24" stroke-width="2" stroke-linecap="round" fill="transparent" style="stroke: #93743D;"></circle><polyline id="successAnimationCheck" stroke="#93743D" stroke-width="2" points="23 34 34 43 47 27" fill="transparent" style="stroke: #93743D;"></polyline></svg><h5>Đã thêm vào giỏ hàng</h5></div>')
+			$('#successAnimationCheck').one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
+				let successPopUp = $('.success-popup')
+			    let SwingOutTl = new TimelineLite();
+			    SwingOutTl.to(successPopUp, 1, {y: -1000, ease: Power3.easeInOut, onComplete: removePopUp})
+
+			    function removePopUp() {
+			    	$('.success-popup').remove()
+			    }
+			});
+		}
+		
+	})
+}
+
+//Change product quantity
+function quantity() {
+	function quantityControl() {
+		$('.plus').on('click',function(){
+			event.preventDefault();
+	        let $qty = $(this).closest('.quantity-control').find('.quantity');
+	        let currentVal = parseInt($qty.val());
+	        if (!isNaN(currentVal)) {
+	            $qty.val(currentVal + 1);
+	        }
+	    }); 
+	    $('.minus').on('click',function(){
+	    	event.preventDefault();
+	        let $qty = $(this).closest('.quantity-control').find('.quantity');
+	        let currentVal = parseInt($qty.val());
+	        if (!isNaN(currentVal) && currentVal > 1) {
+	            $qty.val(currentVal - 1);
+	        }
+	    });
+	}
+
+	function productTotalCal() {
+		let currentVal = 1
+		$('.control-btn').on('click', function(e) {
+			e.preventDefault();
+			let productName = $(this).parents('.product-quantity').siblings('.product-name').children().text()
+			let matchProduct = products.filter((index) => index.name == productName);
+			console.log()
+			if($(e.target).hasClass('plus')) {
+				currentVal++
+			}
+			else if ($(e.target).hasClass('minus')){
+				if(currentVal === 1) {
+					currentVal = 1
+				}
+				else {
+					currentVal--
+				}
+			}
+			$(this).parents('.product-quantity').siblings('.product-total').children().text((matchProduct[0].price * currentVal).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+		});
+	}
+
+	quantityControl()
+	productTotalCal()
+}
+
+function productCartRemove() {
+	$('.product-remove a').on('click', function(event) {
+		event.preventDefault();
+		console.log(event.target)
+		let $thisRow = $(this).parents('tr')
+		let removeRowTl = new TimelineLite()
+		removeRowTl.to($thisRow, 1, {x:'100%', autoAlpha: 0, ease: Back.easeIn.config(1.7), onComplete: removeRow})
+		function removeRow() {
+			$thisRow.remove();
+		}
+	});
+}
+
 $(document).ready(function() {
 	animation()
 	menuHandle()
@@ -283,4 +419,7 @@ $(document).ready(function() {
 	searchHandle()
 	sidebarHandle()
 	imageParallax()
+	successPopUp()
+	quantity()
+	productCartRemove()
 });

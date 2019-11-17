@@ -4,7 +4,7 @@
 
 // $up: Uppercase;
 // $cpt: Capitalize;
-@mixin link($color, $hvr-color, $fsz: 18, $fw: 400, $lh: 1, $up: false, $cpt: false) {
+@mixin link($color, $hvr-color, $fsz: 16, $fw: 400, $lh: 1, $up: false, $cpt: false) {
 	color: setColor($color);
 	font-size: remCal($fsz);
 	text-decoration: none;
