@@ -1,0 +1,159 @@
+.checkout {
+	margin-bottom: remCal(100);
+	.checkout-title {
+		@include typo($fsz:30,$fw:700);
+		margin-bottom: remCal(30);
+	}
+	.checkout_left {
+		padding-right: remCal(50);
+		.checkout_left__form {
+			margin-bottom: remCal(30);
+			.input-group {
+				display: flex;
+				align-items: center;
+				margin-bottom: remCal(15);
+				label {
+					width: remCal(180);
+					@include typo();
+				}
+				input {
+					@include input(#CFCFCF, $width: 100%,$height: auto,$brd: remCal(3));
+					flex: 1;
+					&.error-border {
+						border-color: #ff0000;
+					}
+				}
+				select {
+					@include select($pd-hoz: 15, $border: #CFCFCF, $width: 100%,$brd: remCal(3),$height: auto);
+					flex: 1;
+					padding-top: remCal(15);
+					padding-bottom: remCal(15);
+					&.error-border {
+						border-color: #ff0000;
+					}
+				}
+				textarea {
+					@include textarea($pd-ver:15,$pd-hoz:15,$width: 100%,$height: auto,$brd: remCal(3));
+					flex: 1;
+				}
+				.input-wrapper {
+					flex: 1;
+					.error {
+						display: none;
+						margin-top: remCal(10);
+						font-style: italic;
+						text-align: right;
+						@include typo($color: #ff0000, $fsz:14);
+					}
+				}
+			}
+		}
+		.note {
+			@include typo($fw:700,$fsz:14);
+			span {
+				@include typo($fsz:14, $color: setSchemaColor(gray));
+				margin-left: remCal(5);
+			}
+		}
+	}
+	.checkout_right {
+		.cart {
+			margin-bottom: 0;
+			.cart-footer {
+				.cart-footer_right {
+					width: 100%;
+					#my-accordion {
+						.cart-total_box {
+							width: 100%;
+							max-width: 100%;
+							.cart-total_box__heading  {
+								background-color: setColor(trans);
+								color: setColor(base);
+								border: 2px solid setColor(base);
+								&:after {
+									content: "\f067";
+									position: absolute;
+									top: remCal(13);
+									right: remCal(15);
+									font-family: "Font Awesome 5 Pro";
+									font-size: remCal(12);
+								}
+							}
+							&.acc_active {
+								.cart-total_box__heading {
+									background-color: setColor(base);
+									color: setColor(white);
+									&:after {
+										content: "\f068";
+									}
+								}
+							}
+							.cart-total_box__content {
+								margin-bottom: remCal(15);
+								padding-top: remCal(30);
+								.error {
+									display: none;
+									margin-bottom: remCal(10);
+									font-style: italic;
+									@include typo($color: #ff0000, $fsz:14);
+								}
+								.checkbox-slide {
+									margin-bottom: remCal(20);
+									.checkbox-slide_header {
+										margin-bottom: remCal(10);
+										.radio-group {
+											label {
+												@include typo($fw:700,$fsz:16);
+												&:before {
+													top: remCal(4);
+												}
+											}
+										}
+									}
+									.checkbox-slide_content {
+										padding: remCal(15);
+										border: 1px solid #CFCFCF;
+										border-radius: remCal(3);
+										@include typo($fsz:13,$color:setSchemaColor(gray));
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	@include small-desktop {
+		.checkout_left {
+			padding-right: 0;
+			margin-bottom: remCal(50);
+		}
+		.checkout_right {
+			margin-left: auto;	
+			max-width: remCal(400);
+
+		}
+	}
+	@include mobile {
+		.checkout_left {
+			.checkout_left__form {
+				.input-group {
+					flex-direction: column;
+					align-items: flex-start;
+					margin-bottom: remCal(30);
+					label {
+						margin-bottom: remCal(15);
+					}
+					.input-wrapper {
+						width: 100%;
+					}
+				}
+			}
+		}
+		.checkout_right {
+			max-width: 100%;
+
+		}
+	}
+}

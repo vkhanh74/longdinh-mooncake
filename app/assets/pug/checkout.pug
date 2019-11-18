@@ -12,5 +12,102 @@ block content
 					a.prvPage(href="index.html") Trang chủ
 					a.prvPage(href="cart.html") Giỏ hàng
 					a.crtPage(href="#") Thanh toán
-	.checkout
+	form.checkout(action="order-complete.html")
 		.custom-container
+			.row
+				.col-lg-8
+					.checkout_left
+						h3.checkout-title Thông tin người nhận
+						.checkout_left__form
+							.input-group
+								label Họ và tên (Ông/bà):
+								.input-wrapper
+									input(type="text" name="fullname" data-validate='true')
+									.error Vui lòng nhập đầy đủ họ và tên
+							.input-group
+								label Tên công ty, tổ chức:
+								input(type="text" name="company")
+							.input-group
+								label#city Thành phố:
+								.input-wrapper
+									select#city(name="city" data-validate-select="true")
+										option(value="1") Hà Nội
+										option(value="2") Đà Nẵng
+										option(value="3") Hồ Chí Minh
+										option(value="4" selected hidden disable) Vui lòng chọn tỉnh/thành phố
+									.error Vui lòng chọn 1 tỉnh/thành phố
+							.input-group
+								label Địa chỉ giao hàng:
+								.input-wrapper
+									input(type="text" name="address" data-validate='true')
+									.error Vui lòng nhập địa chỉ giao hàng hợp lệ
+							.input-group
+								label Số điện thoại:
+								.input-wrapper
+									input(type="text" name="telephone" data-validate='true')
+									.error Vui lòng nhập số điện thoại hợp lệ
+							.input-group
+								label Địa chỉ email:
+								input(type="text" name="email")
+							.input-group
+								label(for="note") Ghi chú thêm:
+								textarea#note(name="", cols="30", rows="5")
+						h3.note Thông tin thêm:
+							span Để đảm bảo phục vụ tốt nhất cho quý khách hàng, chúng tôi sẽ giao hàng sớm nhất từ 1-3 ngày để bánh giữ nguyên hương vị và chất lượng
+				.col-lg-4
+					.checkout_right
+						h3.checkout-title Đơn hàng của tôi
+						.cart
+							.cart-footer
+								.cart-footer_right
+									ul#my-accordion
+										li.cart-total_box
+											.cart-total_box__heading
+												h5 Thành tiền
+											.cart-total_box__content
+												table
+													tbody
+														each product in products.filter((product) => product.type == 'box').slice(3,6)
+															tr
+																td.product-name= product.name
+																	span x1
+																td.product-price
+																	span= product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+														tr.ship-fee
+															td
+																span Phí vận chuyển
+															td
+																span Miễn phí
+														tr.total
+															td
+																span Tổng cộng
+															td
+																span 4,890,000
+										li.cart-total_box
+											.cart-total_box__heading
+												h5 Phương pháp thanh toán
+											.cart-total_box__content
+												.error Vui lòng chọn phương thức thanh toán 
+												.checkbox-slide
+													.checkbox-slide_header
+														.radio-group
+															input#momo(type="radio" name="payment-method" value="momo" data-validate-radio='true')
+															label(for="momo") Ví Momo 
+																img(src="assets/images/momo.png", alt="momo logo", height="18", width="18")
+													.checkbox-slide_content
+														p Ứng dụng Ví điện tử MoMo là sản phẩm của Công ty Cổ phần Dịch vụ Di động Trực tuyến (M_Service). Ứng dụng cho phép bạn tạo và nạp tiền vào tài khoản MoMo để thanh toán cho hơn 200 dịch vụ như nạp tiền điện thoại, thanh toán điện nước, thanh toán vay tiêu dùng, v.v... 
+												.checkbox-slide
+													.checkbox-slide_header
+														.radio-group
+															input#ATM(type="radio" name="payment-method" value="atm" data-validate-radio='true')
+															label(for="ATM") Thanh toán bằng ATM/Internet banking
+													.checkbox-slide_content
+														p Long đình hỗ trợ khách hàng thanh toán bằng thẻ ATM nội địa hoặc sử dụng Internet Banking để thanh toán hóa đơn
+												.checkbox-slide
+													.checkbox-slide_header
+														.radio-group
+															input#COD(type="radio" name="payment-method" value="cod" data-validate-radio='true')
+															label(for="COD") Thanh toán khi nhận hàng
+													.checkbox-slide_content
+														p Quý khách có thể thanh toán hóa đơn khi nhận được hàng
+												button.btn.btn--base(href="order-complete.html") Tiến hành thanh toán

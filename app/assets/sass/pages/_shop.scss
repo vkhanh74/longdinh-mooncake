@@ -29,7 +29,7 @@
 					margin-right: remCal(15);
 				}
 				select {
-					@include select($width: 200, $height: 35);
+					@include select($pd-ver: 10, $width: remCal(200));
 				}
 			}
 		}

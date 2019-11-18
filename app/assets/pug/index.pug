@@ -31,11 +31,11 @@ block content
 				img.decoration-bottom--2(src="assets/images/hoa-2.png", alt="Decoration")
 		.our-story
 			.custom-container
-				.section-header
+				.section-header.wow.fadeInUp
 					h3 Câu chuyện của chúng tôi
 					p Hãy cùng khám phá sự tinh tế trong mỗi chiếc bánh trung thu Long Dinh
 				.our-story_content
-					.our-story_content--1
+					.our-story_content--1.wow.fadeInUp
 						.row.align-items-sm-center
 							.col-md-6
 								.our-story_content__intro
@@ -43,7 +43,7 @@ block content
 									p Tinh hoa hội tụ trong diện mạo sang trọng của những hộp bánh trung thu LongDinh, vừa tôn vinh những giá trị truyền thống, vừa điểm tô những sắc màu tươi mới. 
 							.col-md-6
 								iframe(width='100%', height='315', src='https://www.youtube.com/embed/Bjzwe3bqiL8', frameborder='0', allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture', allowfullscreen='')
-					.our-story_content--2
+					.our-story_content--2.wow.fadeInUp
 						.row.align-items-sm-center
 							.col-md-6
 								img(src="assets/images/cakes.png", alt="Moon cakes")
@@ -53,10 +53,10 @@ block content
 									p Tinh hoa gói gọn trong chiếc bánh trung thu Longdinh đẳng cấp cho tình thân thêm trọn vẹn. Đó là món quà quý xứng tầm với những mối giao hảo thân tình và chứa đựng trọn vẹn tâm ý của người trao gửi.
 		.our-products
 			.custom-container
-				.section-header
+				.section-header.wow.fadeInUp
 					h3 Tinh túy chắt lọc đến từ Longdinh
 					p Những dòng bánh cao cấp đem đến sự đẳng cấp cho khách hàng
-				.row
+				.row.wow.fadeInUp
 					.col-md-6
 						a(href="mooncake-2020.html").product-type.big-product-type
 							.product-type_img
@@ -97,10 +97,10 @@ block content
 				img.decoration-bottom--1(src="assets/images/footer-deco.png", alt="Decoration")
 		.feature-products
 			.custom-container
-				.section-header
+				.section-header.wow.fadeInUp
 					h3 Sản phẩm bán chạy 
 					p Những loại bánh được khách hàng ưa chuộng và đặt mua nhiều nhất
-				.products-group
+				.products-group.wow.fadeInUp
 					each product in products.filter((product) => product.type == 'box').slice(0,5)
 						.product
 							.product-image
@@ -112,14 +112,14 @@ block content
 									h5= product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 										if product.discount
 											span= product.discount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-				.item-center
+				.item-center.wow.fadeInUp
 					a.btn.btn--base(href="mooncake-2020.html") Xem thêm sản phẩm
 		.feature-news
 			.custom-container
-				.section-header
+				.section-header.wow.fadeInUp
 					h3 Tin tức sản phẩm
 					p Về thương hiệu bánh trung thu Longdinh
-				.feature-news-group
+				.feature-news-group.wow.fadeInUp
 					.news
 						.news-image
 							img(src="assets/images/news/7.jpg", alt="Hình ảnh tin tức")
@@ -184,7 +184,7 @@ block content
 									i.fal.fa-eye
 									| 15
 							p.news-content--cited Nhiều loại bánh trung thu mẫu mã mới lạ thu hút được sự yêu thích của nhiều người.
-		.lastest-news
+		.lastest-news.wow.fadeInUp
 			.custom-container
 				.section-header.only-title
 					h3 Nhận tin tức tức mới nhất từ chúng tôi

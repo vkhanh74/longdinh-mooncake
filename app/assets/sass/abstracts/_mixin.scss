@@ -150,6 +150,7 @@
 	&:focus {
 		outline: 0;
 		box-shadow: none;
+		border: 1px solid setColor(base);
 	}
 	@include typo($fsz: $fsz,$lh: $height, $fw: $fw);
 	@include prefix(border-radius, $brd);
@@ -160,14 +161,15 @@
 }
 
 //Textarea
-@mixin textarea($pd-ver:15,$pd-hoz:15,$width: 100%,$height: auto,$brd: 0px) {
-	background-color: setColor(white);
-	border: 1px solid setColor(black);
+@mixin textarea($pd-ver:15,$pd-hoz:15,$border: #CFCFCF,$width: 100%,$height: auto,$brd: 0px) {
+	background-color: setColor(trans);
+	border: 1px solid setColor($border);
 	height: remCal($height);
 	width: $width;
 	transition: $transition;
     font-family: inherit;
 	-webkit-appearance: none;
+	resize: none;
 	padding: {
 		top: remCal($pd-ver);
 		bottom: remCal($pd-ver);
@@ -177,6 +179,7 @@
 	&:focus {
 		outline: 0;
 		box-shadow: none;
+		border: 1px solid setColor(base);
 	}
 	@include typo($lh: $height);
 	@include prefix(border-radius, $brd);
@@ -187,26 +190,36 @@
 
 
 //Select
-@mixin select($pd-hoz: 15, $width: 100%,$brd: 999px,$height: auto,$default:true) {
+@mixin select($pd-hoz: 15, $pd-ver: 15, $border: base, $width: 100%,$brd: 999px,$height: auto,$default:false) {
 	background-color: setColor(trans);
-	border: 1px solid setColor(base);
+	border: 1px solid setColor($border);
 	height: remCal($height);
-	width: remCal($width);
+	width: $width;
 	transition: $transition;
+	position: relative;
 	padding: {
 		right: remCal($pd-hoz);
 		left: remCal($pd-hoz);
+		top: remCal($pd-ver);
+		bottom: remCal($pd-ver);
 	}
 	&:focus {
 		outline: 0;
 		box-shadow: none;
+		border: 1px solid setColor(base);
 	}
 	@if $default == false {
 		-webkit-appearance: none;
+		background: {
+			image: url('../images/chevron-down.svg');
+			size: remCal(10);
+			position: calc(100% - 15px) center;
+			repeat: no-repeat;
+		}
 	}
 	@include typo($lh: $height, $fsz: 16);
 	@include prefix(border-radius, $brd);
-
+	
 }
 
 //*****************************

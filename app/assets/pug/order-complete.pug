@@ -1,0 +1,18 @@
+extends base/layout.pug
+
+block title
+	- var crtPage = 3;
+	title Hoàn tất thanh toán
+block content
+	.order-complete
+		.custom-container
+			.row.justify-content-center
+				.col-lg-10
+					.order-complete_content
+						.order-complete_content__header
+							img(src="assets/images/checkout-complete.svg", alt="complete icon")
+							h2 Chúc mừng, Quý khách đã đặt hàng thành công!
+							h5 Chúng tôi đã gửi tin nhắn cho quý khách về thông tin đơn hàng
+						.order-complete_content__footer
+							p Cảm ơn quý khách đã tin tưởng và ủng hộ Longdinh Mooncake, dưới đây mã đơn hàng của quý khách:
+							.order-number 46/030119/13

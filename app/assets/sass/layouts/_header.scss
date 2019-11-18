@@ -126,7 +126,7 @@
 					height: remCal(15);
 					width: remCal(15);
 					border-radius: 999px;
-					@include typo($fsz: 12, $lh:15, $color: setSchemaColor(gray,dark));
+					@include typo($fsz: 12, $lh:15, $color: setSchemaColor(gray,dark),$fw:700);
 					text-align: center;
 				}
 			}

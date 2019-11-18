@@ -399,6 +399,7 @@ function quantity() {
 	productTotalCal()
 }
 
+//Remove product from cart animation
 function productCartRemove() {
 	$('.product-remove a').on('click', function(event) {
 		event.preventDefault();
@@ -412,6 +413,108 @@ function productCartRemove() {
 	});
 }
 
+//Checkout accordion
+function accordion() {
+	$("#my-accordion").accordionjs({
+		slideSpeed  : 300,
+		activeIndex : 2,
+	});
+}
+
+//Checkout choose payment method 
+function tickRadioToOpen() {
+	$('.checkbox-slide .checkbox-slide_content').slideUp()
+
+	$('.checkbox-slide .checkbox-slide_header').on('click', function(e) {
+   		if($(this).children().children('input').is(':checked')) { 
+   			$(this).next().slideDown(300);
+   			$(this).parent().siblings().children('.checkbox-slide_content').slideUp()
+   			$('.cart-total_box__content .error').hide()
+   		}
+	});
+}
+
+//Form validate
+function validate() {
+	$('.checkout').on('submit', function(event) {
+		let validateInput = $(`input[data-validate='true']`)
+		let validateSelect = $(`select[data-validate-select='true']`)
+		let validateRadio = $(`input[data-validate-radio='true']`)
+		
+		//Validate input
+		$.each(validateInput, function(index, val) {
+
+			let phoneRegex = /\(?(^[+]*[0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/g
+
+			let nameRegex = /^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ"+ "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ"+"ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]{3,70}$/g
+
+			let addressRegex = /^([a-zA-Z-_,ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ"+ "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ"+0123456789"ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]){5,100}$/g
+
+			if(val.value == '') {
+				$(this).addClass('error-border')
+				$(this).next().show()
+				event.preventDefault();
+			}
+			else {
+				$(this).removeClass('error-border')
+				$(this).next().hide()
+			}
+
+			if($(val).attr('name') == 'fullname') {
+				checkRegex(nameRegex,'fullname')
+			}
+
+			if($(val).attr('name') == 'address') {
+				checkRegex(addressRegex,'address')
+			}
+
+			if($(val).attr('name') == 'telephone') {
+				checkRegex(phoneRegex,'telephone')
+			}
+
+			function checkRegex(regex,nameAttr) {
+				if(!val.value.match(regex)) {
+					$(this).addClass('error-border')
+					$(this).next().show()
+					$(`input[name=${nameAttr}]`).on('keyup', function(event) {
+						if($(this).val().match(regex)) {
+							$(this).removeClass('error-border')
+							$(this).next().hide()
+						}
+						else {
+							$(this).addClass('error-border')
+							$(this).next().show()
+							event.preventDefault();
+						}
+					});
+				}
+			}
+		});
+
+		//Validate payment method
+		if($(`input[data-validate-radio='true']:checked`).length === 0) {
+			$('.cart-total_box__content .error').show()
+			event.preventDefault();
+		} 
+		else {
+			$('.cart-total_box__content .error').hide()
+		}
+
+		//Validate country/city select
+		if(validateSelect.val() == 4) {
+			validateSelect.addClass('error-border')
+			validateSelect.next().show()
+			event.preventDefault();
+		}
+		validateSelect.on('change', function(e){
+			if($(this).val() !== 4) {
+				$(this).removeClass('error-border')
+				$(this).next().hide()
+			}
+		})
+	});
+}
+
 $(document).ready(function() {
 	animation()
 	menuHandle()
@@ -422,4 +525,11 @@ $(document).ready(function() {
 	successPopUp()
 	quantity()
 	productCartRemove()
+	accordion()
+	tickRadioToOpen()
+	validate()
+	new WOW().init({
+		offset: 0,
+		mobile: false,
+	});
 });
