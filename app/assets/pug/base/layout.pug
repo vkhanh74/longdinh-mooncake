@@ -10,7 +10,10 @@ html(lang="en")
 		include link.pug
 	body
 		include variable.pug
-		//- include loader.pug
+		if crtPage === 1
+			include loader.pug
+		else
+			include loader-2.pug
 		include search.pug
 		include header.pug
 		div(class= isPadding ? 'content' : 'content noPadding')

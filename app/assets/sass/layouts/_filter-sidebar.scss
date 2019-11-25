@@ -59,12 +59,51 @@
 	}
 }
 
+
+
 #open-sidebar {
-	@include link(setSchemaColor(gray, dark), base, $fsz: 18, $fw: 700, $lh: 1);
-	i {
-		margin-right: remCal(10);
+	position: fixed;
+	left: 0;
+	top: 30%;
+	@include button($pd: remCal(15) remCal(15),
+			$bg-color: base,
+			$hvr-color: base,
+			$color: white,
+			$hvr-bg-color: white,
+			$border-color: base,
+			$hvr-border-color: base,
+			$fsz: 16,
+			$btn-rd: 0 3px 3px 0,
+			$border-thick: 2)
+	display: none;
+	span {
+		display: none;
+		text-transform: uppercase;
+	}
+	@include small-desktop {
+		display: inline-block;
+		&.isHide {
+			display: none;
+		}
+	}
+	@include mobile {
+		top: auto;
+		bottom: 0;
+		right: 0;
+		border-radius: 0;
+		border-width: 2px 0 0 0;
+		padding: remCal(20) 0;
+		border-top: 2px solid setColor(base-lighter);
+		i {
+			margin-right: remCal(15);
+		}
+		span {
+			display: inline-block;
+		}
 	}
 }
+
+
 
 #overlay {
 	position: fixed;

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Tin tức</title>
+    <!--build:css assets/css/styles.min.css-->
+    <link rel="stylesheet" href="assets/css/custom_bootstrap.css"/>
+    <link rel="stylesheet" href="assets/css/slick.min.css"/>
+    <link rel="stylesheet" href="assets/css/all.min.css"/>
+    <link rel="stylesheet" href="assets/css/accordion.css"/>
+    <link rel="stylesheet" href="assets/css/animate.min.css"/>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+    <!--endbuild-->
+  </head>
+  <body>
+    <div id="loader">
+      <div class="loader-content"><img id="loader--2-logo" src="assets/images/logo.png" alt="Logo"/></div>
+    </div>
+    <div id="search">
+      <div class="overlay"></div><a id="close-search" href="#"><i class="fal fa-times"></i></a>
+      <div class="search-content">
+        <div class="custom-container">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <form action="mooncake-2020.html">
+                <input type="text" name="search" placeholder="Tìm kiếm dòng bánh, vị bánh trung thu"/>
+                <button><i class="fal fa-paper-plane"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header">
+      <div class="custom-container">
+        <div class="header-content"><a class="logo" href="index.html"><img src="assets/images/logo.png" alt="Logo"/></a>
+          <nav>
+            <ul>
+              <li><a class="nav-link" href="index.html">Trang chủ</a></li>
+              <li><a class="nav-link" href="about.html">Về chúng tôi</a></li>
+              <li><a class="nav-link" href="mooncake-2020.html">Bánh trung thu 2020</a></li>
+              <li><a class="active nav-link" href="blog.html">Tin tức</a></li>
+              <li><a class="btn nav-link" href="contact.html">Liên hệ đặt bánh</a></li>
+            </ul>
+          </nav>
+          <div class="nav-function"><a id="open-search" href="#"><i class="fal fa-search"></i></a><a class="view-cart" href="cart.html"><i class="fal fa-shopping-bag"></i><span>3</span></a><a class="open-nav" href=""><i class="fal fa-bars"></i></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="content"><a id="open-sidebar" href="#"> <i class="fal fa-filter"></i><span>Lọc bài viết</span></a>
+      <div class="blog-detail">
+        <div class="custom-container">
+          <div class="breadcrumb breadcrumb--dark"><a class="prvPage" href="index.html">Trang chủ</a><a class="prvPage" href="blog.html">Tin tức</a><a class="crtPage" href="#">Tết trung thu – chị em chọn quà gì cho ý nghĩa?</a></div>
+          <div class="blog-detail_content">
+            <div class="row">
+              <div class="col-lg-3">
+                <div class="blog-detail_content__left">
+                  <div id="sidebar-filter">
+                    <div class="sidebar-section">
+                      <div class="search-group">
+                        <form action="/blog.html">
+                          <input type="text" placeholder="Tìm kiếm bài viết" name="search"/>
+                          <button> <i class="fal fa-search"></i></button>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="sidebar-section">
+                      <div class="sidebar-section_header">
+                        <h5 class="sidebar-section--title">Chủ đề</h5>
+                      </div>
+                      <ul class="categries">
+                        <li><a href="blog-detail.html">Bánh trung thu</a></li>
+                        <li><a href="blog-detail.html">Hoạt động</a></li>
+                        <li><a href="blog-detail.html">Đánh giá</a></li>
+                        <li><a href="blog-detail.html">Khuyến mãi</a></li>
+                        <li><a href="blog-detail.html">Quy trình làm bánh</a></li>
+                      </ul>
+                    </div>
+                    <div class="sidebar-section">
+                      <div class="sidebar-section_header">
+                        <h5 class="sidebar-section--title">Tin tức nổi bật</h5>
+                      </div>
+                      <div class="feature-news_group">
+                        <div class="feature-news">
+                          <div class="feature-news_img"><img src="assets/images/news/1.jpg" alt="Hình ảnh tin tức"/></div>
+                          <div class="feature-news_content"><a href="blog-detail">Hoa văn trên trăng vàng – tuyệt tác vị thu</a>
+                            <p><i class="fal fa-clock"></i><span>1/9/2019</span></p>
+                          </div>
+                        </div>
+                        <div class="feature-news">
+                          <div class="feature-news_img"><img src="assets/images/news/2.jpg" alt="Hình ảnh tin tức"/></div>
+                          <div class="feature-news_content"><a href="blog-detail">Tết trung thu – chị em chọn quà gì cho ý nghĩa?</a>
+                            <p><i class="fal fa-clock"></i><span>3/9/2019</span></p>
+                          </div>
+                        </div>
+                        <div class="feature-news">
+                          <div class="feature-news_img"><img src="assets/images/news/3.jpg" alt="Hình ảnh tin tức"/></div>
+                          <div class="feature-news_content"><a href="blog-detail">Tưng bừng không khí lễ hội tại các gian hàng bánh trung thu Longdinh</a>
+                            <p><i class="fal fa-clock"></i><span>15/9/2019</span></p>
+                          </div>
+                        </div>
+                        <div class="feature-news">
+                          <div class="feature-news_img"><img src="assets/images/news/4.jpg" alt="Hình ảnh tin tức"/></div>
+                          <div class="feature-news_content"><a href="blog-detail">Bánh trung thu không đường cho người ăn kiêng, giữ dáng</a>
+                            <p><i class="fal fa-clock"></i><span>8/9/2019</span></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sidebar-section">
+                      <div class="sidebar-section_header">
+                        <h5 class="sidebar-section--title">Tag</h5>
+                      </div>
+                      <div class="tag-group"><a class="tag" href="blog.html">trung thu</a><a class="tag" href="blog.html">Bánh trung thu</a><a class="tag" href="blog.html">lễ hội</a><a class="tag" href="blog.html">gia truyền</a><a class="tag" href="blog.html">ăn kiêng</a><a class="tag" href="blog.html">handmade</a></div>
+                    </div>
+                    <div class="sidebar-banner"><a class="banner-hover" href="blog-detail.html"><img src="assets/images/shop-sidebar-banner.png" alt="Hình ảnh quảng cáo"/></a></div><a class="btn btn--base" id="close-sidebar" href="">Đóng</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-9">
+                <div class="blog-detail_content__right">
+                  <div class="blog-detail_content__right_header">
+                    <h2>Tết trung thu – chị em chọn quà gì cho ý nghĩa?</h2>
+                    <div class="blog-detail_header__info"><span><i class="fal fa-user"></i>Admin</span><span><i class="fal fa-clock"></i>1/9/2019</span><span><i class="fal fa-eye"></i>4</span></div>
+                  </div>
+                  <div class="blog-detail_content__right_body">
+                    <p class="text-italic">Trung Thu nay cũng bận rộn hơn Trung Thu xưa nhiều phần, chị em vừa phải tất bật chuẩn bị cho cả nhà một Tết đoàn viên thật trọn vẹn, lại vừa phải băn khoăn lựa chọn những món quà biếu vừa vặn thể hiện được sự chu đáo, chân tình tới bạn bè, đồng nghiệp, đối tác.</p>
+                    <h5 class="blog-content--title">Tặng bánh Trung Thu cho người thân</h5>
+                    <p class="blog--paragraph">Cho dù cuộc sống hiện đại có nhiều thay đổi, những giá trị truyền thống vẫn luôn được gìn giữ và trân trọng qua nhiều thế hệ. Bánh Trung Thu, hay còn có tên gọi khác là bánh "Nguyệt Đoàn" – chiếc bánh tượng trưng cho mong muốn mọi sự được viên mãn, tròn đầy, mong cho mọi mối quan hệ được gắn bó, thuận hòa,... rất phù hợp với văn hóa truyền thống tốt đẹp của người Việt Nam. Một hộp Bánh Trung Thu đẹp, với tất cả sự chân thành sẽ thay lời cảm ơn tới những người thân yêu bên bạn.</p>
+                    <p class="blog--paragraph">Tuy nhiên, khi chọn bánh, chị em cũng đừng quên ghi nhớ sở thích và khẩu vị của người được tặng mà lựa cho đúng. Đối với trẻ em, Kinh Đô gợi ý mua tặng những dòng bánh Trung Thu có hình thù con vật ngộ nghĩnh, đáng yêu để tạo sự tò mò, thích thú cho các bạn nhỏ. Còn riêng với người cao tuổi, các bạn có thể chọn loại bánh ít đường, ít chất béo và chứa các loại hạt tốt cho sức khoẻ. Một món quà được được đầu tư công sức lựa chọn, thể hiện được tấm lòng thành của người đem tặng, chắc chắn sẽ khiến đôi bên mãn nguyện và đẹp lòng hơn cả.</p>
+                    <div class="blog-detail_img-group">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="banner-hover"><img src="assets/images/news/2.jpg" alt="Hình ảnh bài viết"/></div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="banner-hover"><img class="mb-0" src="assets/images/news/3.jpg" alt="Hình ảnh bài viết"/></div>
+                        </div>
+                      </div>
+                      <p class="img-group-caption">Dòng bánh Trăng Vàng của Longdinh thích hợp cho việc biếu tặng</p>
+                    </div>
+                    <p class="blog--paragraph">Khi được hỏi về bí kíp chọn quà Trung Thu, chị K.C, nhân viên văn phòng, nhiệt tình chia sẻ: “Các cụ nhà mình thích ăn bánh Trung thu lắm, nhưng nhiều khi phải hạn chế vì bánh chứa đường sẽ ảnh hưởng đến sức khoẻ. Được biết năm nay có dòng bánh sử dụng đường năng lượng thấp, mình đã mua cho bố mẹ mình ăn thử và rất yên tâm.”</p>
+                    <h5 class="blog-content--title">Tặng trà cho đồng nghiệp</h5>
+                    <p class="blog--paragraph">Đối với những mối quan hệ như bạn bè, đồng nghiệp... bên cạnh bánh Trung Thu, bạn hãy chọn thêm một gói trà để món quà thêm đầy đặn. Gói trà thơm thể hiện tình thâm giao, gắn bó và thấu hiểu giữa những người bạn, người đồng nghiệp với nhau. Đêm rằm Trung Thu, dưới ánh trăng vàng mà được nhâm nhi tách trà nóng, ăn miếng bánh ngon, người thưởng trà ắt cũng nhớ và trân quý hơn tấm lòng người tặng trà. Đồng thời, vị chan chát của chén trà thơm sẽ lại càng làm dậy vị thơm bùi ngọt dịu của chiếc bánh Trung Thu trong đêm trăng tròn.</p>
+                    <h5 class="blog-content--title">Tặng đồ chơi truyền thống cho trẻ em</h5>
+                    <p class="blog--paragraph">Tết Trung Thu xưa, người ta thường tổ chức múa lân, múa sư tử, rước đèn lồng và phá cỗ trông trăng ở sân làng. Trẻ con thời bấy giờ chỉ có vài món đồ chơi, tuy giản dị nhưng thú vị và nhiều ý nghĩa. Ngày nay, những màn múa lân hay rước đèn cùng chòm xóm không còn quá phổ biến, vậy nhưng Tết Trung Thu vẫn có một ý nghĩa vô cùng to lớn trong tâm trí người Việt, đặc biệt là với trẻ em. Do đó, đừng ngần ngại dừng chân bên một cửa hàng đồ chơi trên phố, chọn cho các bạn nhỏ một món đồ chơi truyền thống, cho đêm trăng thêm phần ý nghĩa.</p>
+                    <div class="blog-detail_img-group">
+                      <div class="row justify-content-center">
+                        <div class="col-sm-8 col-md-6">
+                          <div class="banner-hover"><img class="mb-0" src="assets/images/news/5.jpg" alt="Hình ảnh bài viết"/></div>
+                        </div>
+                      </div>
+                      <p class="img-group-caption">Sticker đầu lân sáng tạo được tặng kèm khi mua 4 bánh Trung Thu</p>
+                    </div>
+                    <p class="blog--paragraph">Hoặc đơn giản hơn, hãy ghé gian hàng của Kinh Đô. Với mỗi bốn bánh, khách hàng sẽ được tặng kèm Sticker đầu lân đầy tính sáng tạo. Sau khi thưởng thức những miếng bánh thơm ngon, hộp bánh có thể được tận dụng biến thành chiếc đầu lân xinh xắn dành riêng cho các bạn nhỏ chơi đùa. Hình ảnh lân trong tứ linh tượng trưng cho sự may mắn, thịnh vượng và là điềm lành cho mọi nhà, vì thế Kinh Đô cũng hy vọng người tiêu dùng khi mua sản phẩm của mình sẽ có được một mùa Rằm an lành và tràn đầy niềm vui bên gia đình thân yêu.</p>
+                  </div>
+                  <div class="blog-detail_content__right_footer">
+                    <div class="tags">
+                      <h5>Tags:</h5>
+                      <ul>
+                        <li><a class="tag" href="blog-detail.html">trung thu</a></li>
+                        <li><a class="tag" href="blog-detail.html">quà tặng</a></li>
+                        <li><a class="tag" href="blog-detail.html">trăng vàng</a></li>
+                      </ul>
+                    </div>
+                    <div class="share">
+                      <h5>Chia sẻ</h5>
+                      <ul>
+                        <li><a href="blog-detail.html"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="blog-detail.html"><i class="fab fa-twitter"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="related-news">
+                    <div class="section-header only-title">
+                      <h3>Tin tức liên quan</h3>
+                    </div>
+                    <div class="related-news_group">
+                      <div class="news">
+                        <div class="news-image"><img src="assets/images/news/6.jpg" alt="Hình ảnh tin tức"/></div>
+                        <div class="news-content"><a class="news-content--title" href="blog-detail.html">Mondelez Longdinh tạo lợi thế cạnh tranh trên thị trường bánh trung thu</a></div>
+                      </div>
+                      <div class="news">
+                        <div class="news-image"><img src="assets/images/news/7.jpg" alt="Hình ảnh tin tức"/></div>
+                        <div class="news-content"><a class="news-content--title" href="blog-detail.html">Hậu duệ đời thứ 4 của gia tộc hơn 100 năm làm bánh trung thu tại Hà Nội</a></div>
+                      </div>
+                      <div class="news">
+                        <div class="news-image"><img src="assets/images/news/8.jpg" alt="Hình ảnh tin tức"/></div>
+                        <div class="news-content"><a class="news-content--title" href="blog-detail.html">Bánh Trung thu rau câu thơm ngon với cách làm đơn giản tại nhà</a></div>
+                      </div>
+                      <div class="news">
+                        <div class="news-image"><img src="assets/images/news/9.jpeg" alt="Hình ảnh tin tức"/></div>
+                        <div class="news-content"><a class="news-content--title" href="blog-detail.html">Những loại bánh trung thu 2019 đang khiến nhiều bạn trẻ thích thú</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="custom-container">
+        <div class="footer-content">
+          <div class="row justify-content-md-between">
+            <div class="col-md-4 col-lg-4"><a class="logo" href="index.html"><img src="assets/images/logo.png" alt="Logo"/></a>
+              <p class="intro">Bí quyết và tâm huyết chắt chiu hơn 20 năm kinh nghiệm bậc thầy tạo nên vị ngon đặc trưng khó cưỡng, khiến mỗi chiếc bánh là một công trình ẩm thực kỳ công và đẳng cấp.</p>
+              <div class="typo-group">
+                <h5>Thời gian mở cửa:</h5>
+                <p>Thứ 2 - Thứ 6: 8h30 - 18h00</p>
+                <p>Thứ 7 - Chủ Nhật: 9h00 - 16h00</p>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-2">
+              <h5 class="footer-title">Liên kết nhanh</h5>
+              <ul class="quick-links">
+                <li><a href="about.html">Về chúng tôi</a></li>
+                <li><a href="blog.html">Tin tức</a></li>
+                <li><a href="mooncake-2020.html">Bánh trung thu 2019</a></li>
+                <li><a href="404.html">Chọn vị bánh</a></li>
+                <li><a href="contact.html">Liên hệ đặt bánh</a></li>
+                <li><a href="contact.html">Góp ý</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-4">
+              <h5 class="footer-title">Thông tin cửa hàng</h5>
+              <div class="typo-group">
+                <h5>Cơ sở 1:</h5>
+                <p>Điện thoại: 039 539 0668</p>
+                <p>Địa chỉ: Số 4, đường Nguyễn Chí Thanh, Đống Đa</p>
+              </div>
+              <div class="typo-group">
+                <h5>Cơ sở 1:</h5>
+                <p>Điện thoại: 039 539 0668</p>
+                <p>Địa chỉ: Số 45, ngõ 121, Láng Hạ, Đống Đa</p>
+              </div>
+              <div class="typo-group">
+                <h5>Cơ sở 1:</h5>
+                <p>Điện thoại: 039 539 0668</p>
+                <p>Địa chỉ: Tầng 2, TTTM Aeon Mall Long Biên, Long Biên</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--build:js assets/js/main.min.js-->
+    <script rel="script/javascript" src="assets/js/jquery.min.js"></script>
+    <script rel="script/javascript" src="assets/js/slick.min.js"></script>
+    <script rel="script/javascript" src="assets/js/TweenMax.min.js"></script>
+    <script rel="script/javascript" src="assets/js/accordion.min.js"></script>
+    <script rel="script/javascript" src="assets/js/wow.min.js"></script>
+    <script rel="script/javascript" src="assets/js/main.js"></script>
+    <!--endbuild-->
+  </body>
+</html>

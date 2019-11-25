@@ -1,0 +1,23 @@
+.error-404 {
+	margin-top: remCal(100);
+	margin-bottom: remCal(100);
+	.error-404_content {
+		text-align: center;
+		img {
+			max-width: remCal(350);
+			marin: 0 auto;
+			margin-bottom: remCal(30);
+		}
+		h2 {
+			@include typo($fsz:30,$fw:700,$color: base,$up: true);
+			margin-bottom: remCal(15);
+		}
+		p {
+			@include typo($fsz:20);
+			margin-bottom: remCal(35);
+		}
+		.btn {
+			text-transform: uppercase;
+		}
+	}
+}

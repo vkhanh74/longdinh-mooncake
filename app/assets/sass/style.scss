@@ -7,6 +7,7 @@
 @import "base/typography";
 @import "base/animation";
 @import "base/align";
+@import "base/spacing";
 
 @import "components/button";
 @import "components/section-header";
@@ -35,3 +36,5 @@
 @import "pages/checkout";
 @import "pages/order-complete";
 @import "pages/contact";
+@import "pages/blog";
+@import "pages/404";

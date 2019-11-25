@@ -1,0 +1,44 @@
+extends base/layout.pug
+block title
+	- var crtPage = 4;
+	title Tin tức
+block content
+	.page-header
+		.custom-container
+			.page-header_content
+				h2 Tin tức sản phẩm
+				.breadcrumb
+					a.prvPage(href="index.html") Trang chủ
+					a.crtPage(href="#") Tin tức sản phẩm
+	.blog
+		.custom-container
+			p.search-result Kết quả tìm kếm cho:
+				span#search-result
+			.news-group
+				.row
+					each blog in blogs.slice(0,9)
+						.col-sm-6.col-lg-4
+							.news
+								.news-image
+									img(src= blog.image, alt="Hình ảnh tin tức")
+								.news-content
+									a.news-content--title(href="blog-detail.html")= blog.title
+									.news-content--info
+										span
+											i.fal.fa-user
+											= blog.author
+										span
+											i.fal.fa-clock
+											= blog.date
+										span
+											i.fal.fa-eye
+											= blog.comment
+									p.news-content--cited= blog.summary
+			.pagination
+				ul
+					li.active
+						a(href="#") 1
+					li
+						a(href="#") 2
+					li
+						a(href="#") 3

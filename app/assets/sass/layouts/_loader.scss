@@ -11,13 +11,18 @@
 	justify-content: center;
 	.loader-content {
 		text-align: center;
-		img {
+		perspective: 600px;
+		#loader-logo {
 			max-width: remCal(150);
 			margin-bottom: remCal(30);
 		}
 		h1 {
 			@include typo($color: white, $fsz: 50, $cpt: true);
 			font-family: SVN;
+		}
+		#loader--2-logo {
+			max-width: remCal(150);
+			animation: rotate 2s linear infinite;
 		}
 	}
 }

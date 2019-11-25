@@ -1,7 +1,7 @@
 extends base/layout.pug
 
 block title
-	- var crtPage = 4;
+	- var crtPage = 5;
 	title Liên hệ với chúng tôi
 block content
 	.page-header
@@ -13,4 +13,54 @@ block content
 					a.crtPage(href="#") Liên hệ
 	.contact
 		.custom-container
-			
+			.contact-cotent
+				.row
+					.col-lg-6
+						.contact-cotent_left
+							form.contact-form(action="")
+								.input-group
+									label Họ và tên (Ông/Bà):
+									.input-wrapper
+										input(type="text" name="fullname" data-validate='true')
+										.error Vui lòng nhập đầy đủ họ và tên
+								.input-group
+									label Số điện thoại:
+									.input-wrapper
+										input(type="text" name="telephone" data-validate='true')
+										.error Vui lòng nhập số điện thoại
+								.input-group
+									label(for="note") Lời nhắn, góp ý:
+									.input-wrapper
+										textarea#note(name="note", cols="30", rows="5")
+								.item-center
+									button.btn.btn--base-fill Để lại lời nhắn
+					.col-lg-6
+						.contact-content_right
+							.row
+								.col-sm-6
+									.address-block
+										h5 Cơ sở 1:
+										p Điện thoại: 0395390668
+										p Địa chỉ: Số 4, đường Nguyễn Chí Thanh, Đống Đa
+									.address-block
+										h5 Cơ sở 2:
+										p Điện thoại: 0396174624
+										p Địa chỉ: Số 45, ngõ 121, Láng Hạ, Đống Đa
+								.col-sm-6
+									.address-block
+										h5 Cơ sở 1:
+										p Điện thoại: 034861773
+										p Địa chỉ: Tầng 2, TTTM Aeon Mall Long Biên, Long Biên
+									.contact-block
+										h5 Liên hệ với chúng tôi qua:
+										ul
+											li
+												a(href="")
+													i.fab.fa-facebook-f
+											li
+												a(href="")
+													i.fab.fa-twitter
+											li
+												a(href="")
+													i.fab.fa-instagram
+			iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.5289445251437!2d105.84214156533201!3d21.01151144374189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab8905a724d7%3A0xa3dc064af63d6aed!2zxJHhuqNvIEjDsmEgQsOsbmg!5e0!3m2!1svi!2s!4v1574328104214!5m2!1svi!2s', width='100%', height='450', frameborder='0', allowfullscreen='')

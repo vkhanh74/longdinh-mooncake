@@ -11,6 +11,9 @@ block content
 				.breadcrumb
 					a.prvPage(href="index.html") Trang chủ
 					a.crtPage(href="#") Bánh trung thu 2020
+	a#open-sidebar(href="#") 
+		i.fal.fa-filter
+		span Lọc sản phẩm
 	.shop
 		.custom-container
 			.row
@@ -116,9 +119,8 @@ block content
 									a.banner-hover(href="blog-detail.html")
 										img(src="assets/images/shop-banner2.png", alt="Ảnh quảng cáo sản phẩm")
 						.shop-header_filter
-							a#open-sidebar(href="#") 
-								i.fal.fa-filter
-								|Lọc sản phẩm
+							p.search-result Kết quả tìm kếm cho:
+								span#search-result
 							.sort-select
 								p Sắp xếp theo:
 								select#productSort(name="product-sort")

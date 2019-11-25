@@ -15,21 +15,38 @@
 			text-align: right;
 			display: flex;
 			align-items: center;
-			justify-content: flex-end;
-			flex-wrap: wrap;
-			#open-sidebar {
-				display: none;
+			// flex-wrap: wrap;
+			.search-result {
+				@include typo($fsz:18,$color: setSchemaColor(gray));
+				span {
+					margin-left: remCal(10);
+					@include typo($fsz:18, $fw: 700,$color: setSchemaColor(gray, dark));
+					&:after {
+						content: '"';
+					}
+					&:before {
+						content: '"';
+					}
+				}
 			}
 			.sort-select {
 				display: flex;
 				align-items: center;
 				justify-content: flex-end;
+				margin-left: auto;
 				p {
 					@include typo($fsz:18,$lh:0,$color: setSchemaColor(gray));
 					margin-right: remCal(15);
 				}
 				select {
 					@include select($pd-ver: 10, $width: remCal(200));
+				}
+			}
+			@include tablet {
+				white-space: nowrap;
+				overflow-x: auto;
+				.search-result {
+					margin-right: remCal(50);
 				}
 			}
 		}

@@ -17,7 +17,7 @@
 					@include typo();
 				}
 				input {
-					@include input(#CFCFCF, $width: 100%,$height: auto,$brd: remCal(3));
+					@include input(#CFCFCF, $pd-ver:12, $width: 100%,$height: auto,$brd: remCal(3));
 					flex: 1;
 					&.error-border {
 						border-color: #ff0000;

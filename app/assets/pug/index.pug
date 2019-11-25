@@ -120,70 +120,23 @@ block content
 					h3 Tin tức sản phẩm
 					p Về thương hiệu bánh trung thu Longdinh
 				.feature-news-group.wow.fadeInUp
-					.news
-						.news-image
-							img(src="assets/images/news/7.jpg", alt="Hình ảnh tin tức")
-						.news-content
-							a.news-content--title(href="blog_detail.html") Hậu duệ đời thứ 4 của gia tộc hơn 100 năm làm bánh trung thu tại Hà Nội
-							.news-content--info
-								span
-									i.fal.fa-user
-									| Admin
-								span
-									i.fal.fa-clock
-									| 1/9/2019
-								span
-									i.fal.fa-eye
-									| 15
-							p.news-content--cited Sinh ra trong một gia đình làm bánh Trung thu gia truyền ở phố Hàng Đường, sau này dời xuống làng Xuân Đỉnh, ông Đỗ Mạnh Thế là hậu duệ đời thứ 4 trong một gia đình có trên 100 năm làm bánh vào mỗi mùa trăng tròn nhất năm. 					
-					.news
-						.news-image
-							img(src="assets/images/news/8.jpg", alt="Hình ảnh tin tức")
-						.news-content
-							a.news-content--title(href="blog_detail.html") Bánh Trung thu rau câu thơm ngon với cách làm đơn giản tại nhà
-							.news-content--info
-								span
-									i.fal.fa-user
-									| Admin
-								span
-									i.fal.fa-clock
-									| 1/9/2019
-								span
-									i.fal.fa-eye
-									| 15
-							p.news-content--cited Bánh Trung thu rau câu là thức quà được nhiều người yêu thích bởi vị ngon ngọt mát lạnh. Cách làm bánh Trung thu rau câu từ các nguyên liệu flan, đậu xanh, phô mai, khoai môn… sẽ mang đến cho bạn món bánh thơm ngon hấp dẫn. 
-					.news
-						.news-image
-							img(src="assets/images/news/9.jpeg", alt="Hình ảnh tin tức")
-						.news-content
-							a.news-content--title(href="blog_detail.html") Những loại bánh trung thu 2019 đang khiến nhiều bạn trẻ thích thú
-							.news-content--info
-								span
-									i.fal.fa-user
-									| Admin
-								span
-									i.fal.fa-clock
-									| 1/9/2019
-								span
-									i.fal.fa-eye
-									| 15
-							p.news-content--cited Nhiều loại bánh trung thu mẫu mã mới lạ thu hút được sự yêu thích của nhiều người.
-					.news
-						.news-image
-							img(src="assets/images/news/6.jpg", alt="Hình ảnh tin tức")
-						.news-content
-							a.news-content--title(href="blog_detail.html") Những loại bánh trung thu 2019 đang khiến nhiều bạn trẻ thích thú
-							.news-content--info
-								span
-									i.fal.fa-user
-									| Admin
-								span
-									i.fal.fa-clock
-									| 1/9/2019
-								span
-									i.fal.fa-eye
-									| 15
-							p.news-content--cited Nhiều loại bánh trung thu mẫu mã mới lạ thu hút được sự yêu thích của nhiều người.
+					each blog in blogs.slice(0,4)
+						.news
+							.news-image
+								img(src= blog.image, alt="Hình ảnh tin tức")
+							.news-content
+								a.news-content--title(href="blog-detail.html")= blog.title
+								.news-content--info
+									span
+										i.fal.fa-user
+										= blog.author
+									span
+										i.fal.fa-clock
+										= blog.date
+									span
+										i.fal.fa-eye
+										= blog.comment
+								p.news-content--cited= blog.summary
 		.lastest-news.wow.fadeInUp
 			.custom-container
 				.section-header.only-title

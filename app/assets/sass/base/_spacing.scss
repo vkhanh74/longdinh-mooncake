@@ -1,0 +1,8 @@
+@each $direction, $margin in $direction {
+	@each $name, $value in $spacing {
+		.#{$margin}-#{$name} {
+			margin-#{$direction}: $value;
+		}
+	}
+
+}

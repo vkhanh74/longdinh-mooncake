@@ -2,6 +2,7 @@
 	display: block;
 	overflow: hidden;
 	border-radius: remCal(5);
+	@include prefix(overflow, hidden);
 	img {
 		transition: 1.5s ease-in-out;
 	}

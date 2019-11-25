@@ -20,3 +20,7 @@
 	@include link(setColor(gray),base,$fw:700);
 	text-decoration: underline;
 }
+
+.text-italic {
+	font-style: italic;
+}

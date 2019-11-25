@@ -150,7 +150,7 @@
 	&:focus {
 		outline: 0;
 		box-shadow: none;
-		border: 1px solid setColor(base);
+		border-color: setColor(base);
 	}
 	@include typo($fsz: $fsz,$lh: $height, $fw: $fw);
 	@include prefix(border-radius, $brd);

@@ -63,6 +63,23 @@ $align: (
 	center: center
 );
 
+//Direction
+$direction: (
+	top: mt,
+	right: mr,
+	bottom: mb,
+	left: ml,
+);
+
+
+//Spacing:
+$spacing: (
+	15: 15px,
+	30: 30px,
+	50: 50px,
+	100: 100px
+);
+
 //Breakpoints
 $breakpoints: (
   sm: 576px,
