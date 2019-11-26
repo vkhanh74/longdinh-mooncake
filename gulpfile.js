@@ -67,12 +67,12 @@ function minifySoucre() {
 function minifyImage() {
     return gulp.src(paths.images)
         .pipe(cache(imagemin()))
-        .pipe(gulp.dest('dist/images'));
+        .pipe(gulp.dest('dist/assets/images'));
 }
 
 function moveFonts() {
     return gulp.src(paths.fonts)
-        .pipe(gulp.dest('dist/webfonts'));
+        .pipe(gulp.dest('dist/assets/webfonts'));
 }
 
 function cleanBuild(done) {
@@ -80,7 +80,7 @@ function cleanBuild(done) {
 }
 
 const watching = gulp.parallel(wathFiles, browserSyncF);
-const build = gulp.parallel(cleanBuild, style, pugHtml, minifySoucre, minifyImage, moveFonts)
+const build = gulp.series(cleanBuild, style, pugHtml, minifySoucre, minifyImage, moveFonts)
 
 exports.default = watching;
 exports.build = build;

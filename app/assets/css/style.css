@@ -3075,7 +3075,7 @@ footer {
       font-family: cambria-bold;
       line-height: 2.57143rem; }
       .blog .search-result span:after {
-        content: '"'; }
+        content: ''; }
       .blog .search-result span:before {
         content: '"'; }
   .blog .news-group {
@@ -3297,7 +3297,7 @@ footer {
       .blog-detail .blog-detail_content .blog-detail_content__right .blog-detail_content__right_header .blog-detail_header__info span i {
         margin-right: 1rem; }
       .blog-detail .blog-detail_content .blog-detail_content__right .blog-detail_content__right_header .blog-detail_header__info span:after {
-        content: '|';
+        content: "|";
         margin: 0 1.2rem; }
       .blog-detail .blog-detail_content .blog-detail_content__right .blog-detail_content__right_header .blog-detail_header__info span:last-child:after {
         display: none; }

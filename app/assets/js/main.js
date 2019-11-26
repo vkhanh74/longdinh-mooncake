@@ -257,7 +257,7 @@ function animation() {
 
 	$(window).on('load', (function() {
 		//After windown loaded
-	  	tl.to(loader, 1, {y: '-100%', autoAlpha: 0, ease: Power3.easeInOut, onComplete: removeLoader})
+	  	tl.to(loader, 0.5, {y: '-100%', autoAlpha: 0, ease: Power3.easeInOut, onComplete: removeLoader})
 	  	function removeLoader() {
 	  		//Remove loader from DOM
 	  		loader.remove();

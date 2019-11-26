@@ -7,7 +7,7 @@
 			margin-left: remCal(10);
 			@include typo($fsz:18, $fw: 700,$color: setSchemaColor(gray, dark));
 			&:after {
-				content: '"';
+				content: '';
 			}
 			&:before {
 				content: '"';
@@ -119,7 +119,7 @@
 							margin-right: remCal(10);
 						}
 						&:after {
-							content: '|';
+							content: "|";
 							margin: 0 remCal(12);
 						}
 						&:last-child {
