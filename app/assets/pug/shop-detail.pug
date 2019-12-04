@@ -38,13 +38,14 @@ block content
 					each product in products.filter((product) => product.type == 'box').slice(0,6)
 						.product
 							.product-image
-								img(src=product.image)
+								a(href="shop-detail.html")
+									img(src=product.image)
 								a.btn-cart-add(href="#") Thêm vào giỏ hàng
 							.prodcut-content
 								a.prodcut-content--name(href="shop-detail.html")= product.name
 								.product-content_price
-									h5= product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+									h5= product.printPrice()
 										if product.discount
-											span= product.discount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+											span= product.printDiscount()
 
 		

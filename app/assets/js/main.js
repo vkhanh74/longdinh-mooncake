@@ -8,8 +8,31 @@ function product(id, image ,name, price, discount, type) {
   	this.price = price;
   	this.discount = discount;
   	this.type = type;
-  	this.printTotalPrice = (quantity) => {
-  		return (this.price * quantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  	this.printPrice = () => {
+  		return (this.price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  	}
+  	this.printDiscount = () => {
+  		if(this.discount) {
+  			return (this.discount).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  		}
+  	}
+  	this.render = function(render) {
+  		return `<div class="product">
+            <div class="product-image">
+            	<a href="shop-detail.html">
+            		<img src="${this.image}"/>
+            	</a>
+            	<a class="btn-cart-add" href="#">Thêm vào giỏ hàng</a>
+            </div>
+            <div class="prodcut-content">
+            	<a class="prodcut-content--name" href="shop-detail.html">${this.name}</a>
+              	<div class="product-content_price">
+        			<h5>${this.printPrice()}
+        				${this.discount ? '<span>' + this.printDiscount() + '</span>' : ''}
+        			</h5>
+      			</div>
+            </div>
+		</div>`
   	}
 }
 
@@ -24,6 +47,66 @@ const products = [
 	new product(8,'assets/images/products/sp8.png','Trăng vàng hồng ngọc an thịnh (đỏ)', 890000, false, 'box'),
 	new product(9,'assets/images/products/sp9.png','Trăng vàng hoàng kim vinh hoa (vàng)', 2190000, false, 'box'),
 ]
+
+const cloneProduct = [...products]
+
+console.log(cloneProduct)
+
+
+products.forEach(function(ele){
+	// console.log(ele.render())
+})
+
+//Render product when sort
+function renderProduct() {
+	let productSort = $('#productSort');
+	let shopProducts = $('.shop-product_group .row');
+
+	productSort.on('change', function(e) {
+		e.preventDefault();
+		let value = $(this).val()
+		if(value == 'az') {
+			sortArray(cloneProduct,'name')
+			reRender(cloneProduct,shopProducts)
+		}
+		else if(value == 'za') {
+			sortArray(cloneProduct,'name',-1)
+			reRender(cloneProduct,shopProducts)
+		}
+		else if(value == 'lowHigh') {
+			sortArray(cloneProduct,'price')
+			reRender(cloneProduct,shopProducts)
+		}
+		else if(value == 'highLow') {
+			sortArray(cloneProduct,'price',-1)
+			reRender(cloneProduct,shopProducts)
+		}
+		else {
+			reRender(products,shopProducts)
+		}
+		
+	});
+
+	function reRender(arr,ele) {
+		let html = '';
+		arr.slice(0,9).forEach(function(product){
+			html += `
+				<div class="col-sm-6 col-md-4">
+					${product.render()}
+				</div>
+			`
+		})
+		ele.empty().append(html)
+	}
+
+	function sortArray(arr, name, reverseNumber=1) {
+		arr.sort(function(a,b) {
+			if(a[name] < b[name]) { return -1*reverseNumber; }
+		    if(a[name] > b[name]) { return 1*reverseNumber; }
+		    return 0;
+		})
+	}
+}
 
 //Handle sliders
 function slickHandle() {
@@ -237,6 +320,7 @@ function menuHandle() {
 function animation() {
 	//Loader animation
 	const loader = $('#loader');
+	const loader2 = $('#loader-2');
 	const loaderLogo = $('#loader-logo');
 	const loaderTitle = $('#loader-title');
 	const bannerCake = $('.banner-img .banner-img--1')
@@ -257,6 +341,7 @@ function animation() {
 
 	$(window).on('load', (function() {
 		//After windown loaded
+		new TimelineLite().to(loader2, 1, {y: '-100%', autoAlpha: 0, ease: Power3.easeInOut, onComplete: () => loader2.remove()})
 	  	tl.to(loader, 0.5, {y: '-100%', autoAlpha: 0, ease: Power3.easeInOut, onComplete: removeLoader})
 	  	function removeLoader() {
 	  		//Remove loader from DOM
@@ -352,7 +437,7 @@ function sidebarHandle() {
 	}
 
 	function resetForm() {
-		$('#redo-filter').on('click', function(e) {
+		$('#reset-filter').on('click', function(e) {
 			e.preventDefault()
 			$('#sidebar-filter')[0].reset();
 		});
@@ -647,6 +732,7 @@ $(document).ready(function() {
 	tickRadioToOpen()
 	validate()
 	getQuery()
+	renderProduct()
 	new WOW().init({
 		offset: 0,
 	});

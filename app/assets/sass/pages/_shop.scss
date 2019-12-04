@@ -59,14 +59,11 @@
 			justify-content: space-between;
 			padding-bottom: remCal(15);
 			border-bottom: remCal(1) solid #ccc;
-			a {
-				@include link(setSchemaColor(gray), base, $fsz: 16);
-				i {
-					margin-right: remCal(5);
-				}
-			}
 			#reset-filter {
-				margin-left: remCal(15);
+				margin-left: auto;
+				i {
+					margin-right: remCal(10);
+				}
 				@include button($pd: remCal(8) remCal(16),
 								$bg-color: trans,
 								$hvr-color: white,

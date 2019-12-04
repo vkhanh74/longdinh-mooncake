@@ -19,9 +19,6 @@ block content
 				.col-lg-3
 					form#sidebar-filter(action="")
 						.sidebar-header
-							a#redo-filter(href="#")
-								i.fal.fa-undo
-								|Làm lại
 							a#reset-filter(href="#")
 								i.fal.fa-trash
 								|Bỏ lọc
@@ -134,14 +131,15 @@ block content
 								.col-sm-6.col-md-4
 									.product
 										.product-image
-											img(src=product.image)
+											a(href="shop-detail.html")
+												img(src=product.image)
 											a.btn-cart-add(href="#") Thêm vào giỏ hàng
 										.prodcut-content
 											a.prodcut-content--name(href="shop-detail.html")= product.name
 											.product-content_price
-												h5= product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+												h5= product.printPrice()
 													if product.discount
-														span= product.discount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+														span= product.printDiscount()
 					.pagination
 						ul
 							li.active

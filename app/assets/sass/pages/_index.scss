@@ -222,10 +222,13 @@
 		}
 	}
 
-	@include small-desktop {
+	@include desktop {
 		.decoration {
 			display: none;
 		}
+	}
+
+	@include small-desktop {
 		.our-products {
 			.product-type {
 				.product-type_img {

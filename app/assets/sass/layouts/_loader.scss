@@ -26,3 +26,13 @@
 		}
 	}
 }
+
+#loader-2 {
+	@extend #loader;
+	.loader-content {
+		#loader--2-logo {
+			max-width: remCal(150);
+			animation: rotate 2s linear infinite;
+		}
+	}
+}

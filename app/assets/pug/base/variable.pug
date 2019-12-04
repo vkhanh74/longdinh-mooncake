@@ -7,9 +7,12 @@
 	  	this.discount = discount;
 	  	this.type = type;
 	  	this.printPrice = () => {
-	  		return this.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	  		return this.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' VND';
 	  	}
-	}
+	  	this.printDiscount = () => {
+	  		return this.discount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	  	}
+	} 
 
 	const products = [
 		new product(1,'assets/images/products/sp1.png','Trăng vàng hồng ngọc tâm an', 800000, false, 'box'),
@@ -92,7 +95,7 @@
 		),
 		new news(
 			9,
-			'assets/images/news/9.jpeg',
+			'assets/images/news/9.jpg',
 			'Những loại bánh trung thu 2019 đang khiến nhiều bạn trẻ thích thú',
 			'Admin', '18/9/2019', 0,
 			'Một làn gió mới cho dòng bánh trung thu năm nay mang tên "Healthy Mooncake", đáp ứng đủ tiêu chí: ngon - sạch - ít calo. Mỗi chiếc bánh "Healthy" được làm từ bột nguyên cám và nói không với đường, không tích mỡ tăng cân.'
